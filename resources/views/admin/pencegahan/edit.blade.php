@@ -38,7 +38,7 @@
                     @method('PUT')
                     <div class="row">
                         <div class="col-lg-9">
-                            <div class="card card-primary">
+                            <div class="card card-success">
                                 <div class="card-header">
                                     <h4 class="card-title">Edit Pencegahan dan Penangkalan</h4>
                                 </div>

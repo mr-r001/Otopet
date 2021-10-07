@@ -34,6 +34,7 @@
                     <tr height="50px" class="text-center text-wrap" style="width: 8rem">
                         <th scope="col">No</th>
                         <th scope="col">IDENTITAS TERDAKWA</th>
+                        <th scope="col">PASAL YANG DILANGGAR</th>
                         <th scope="col">PRA PENUNTUTAN</th>
                         <th scope="col">PENUNTUTAN</th>
                         <th scope="col">EKSEKUSI</th>
@@ -48,6 +49,7 @@
                         <td>5</td>
                         <td>6</td>
                         <td>7</td>
+                        <td>8</td>
                     </tr>
                 </thead>
                 @if (count($data) > 0)
@@ -59,6 +61,7 @@
                         <tr height="40px" align="center">
                             <td>{{ $no++ }}</td>
                             <td>{{ $item->biodata->nama }}</td>
+                            <td>{{ $item->pasal }}</td>
                             <td>{{ $item->nomor_surat_pra_penuntutan }} / {{ $item->tgl_surat_pra_penuntutan }}</td>
                             <td>{{ $item->nomor_surat_penuntutan }} / {{ $item->tgl_surat_penuntutan }}</td>
                             <td>{{ $item->eksekusi }}</td>

@@ -27,7 +27,7 @@
             </div>
 
             <div class="section-body">
-                <div class="card card-primary">
+                <div class="card card-success">
                     @if (auth()->user()->isUser())
                     <div class="card-body" style="width: max-content;display: flex;">
                         <div class="row text-center" style="display: block;z-index: 44444;"> 

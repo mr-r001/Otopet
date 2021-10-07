@@ -38,7 +38,7 @@
                     @method('PUT')
                     <div class="row">
                         <div class="col-lg-9">
-                            <div class="card card-primary">
+                            <div class="card card-success">
                                 <div class="card-header">
                                     <h4 class="card-title">Tambah Tindak Pidana Umum</h4>
                                 </div>
@@ -88,6 +88,15 @@
                                                 <label for="locus">Tempus <sup class="text-danger">*</sup></label>
                                                 <input type="date" class="form-control form-control-sm @error('locus') is-invalid @enderror" name="locus" id="locus" value="@error('locus'){{ old('locus') }}@else{{ $data->locus }}@enderror" placeholder="Masukkan Locus dan Tempus">
                                                 <div class="invalid-feedback" id="valid-locus">{{ $errors->first('locus') }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="pasal">Pasal yang dilanggar <sup class="text-danger">*</sup></label>
+                                                <textarea class="form-control form-control-sm @error('pasal') is-invalid @enderror" name="pasal" id="pasal" placeholder="Masukkan Pasal yang dilanggar">@error('locus'){{ old('locus') }}@else{{ $data->pasal }}@enderror</textarea>
+                                                <div class="invalid-feedback" id="valid-pasal">{{ $errors->first('pasal') }}</div>
                                             </div>
                                         </div>
                                     </div>

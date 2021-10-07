@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="section-body">
-                <div class="card card-primary">
+                <div class="card card-success">
                     <div class="card-header">
                         <h4 class="card-title">Detail</h4>
                     </div>

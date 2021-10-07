@@ -19,7 +19,7 @@
 
 	<div class="table-responsive">
 		<table class="table table-sm table-bordered table-striped" id="report">
-			<thead class="table-primary">
+			<thead class="table-success">
 			  <tr>
 				<th scope="col">No</th>
 				<th scope="col">Customer</th>

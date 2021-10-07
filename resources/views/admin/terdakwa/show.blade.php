@@ -16,7 +16,7 @@
         }
     </style>
 
-    <title> TERSANGKA /TERDAK:WA/TERPIDANA</title>
+    <title> TERSANGKA /TERDAKWA/TERPIDANA</title>
 </head>
 
 <body class="A4">
@@ -25,7 +25,7 @@
         <u><span class="ml-auto" style="position: absolute;right: 30px;top: 30px;">D.IN.12</span></u> <br />
         <br>
         <div class="cont py-3">
-            <h5 class="text-center"><u>KARTU TIK  TERSANGKA /TERDAK:WA/TERPIDANA</u></h5>
+            <h5 class="text-center"><u>KARTU TIK  TERSANGKA /TERDAKWA/TERPIDANA</u></h5>
             <h6 class="text-center">
                 Nomor : {{ $data->nomor }}
             </h6>
@@ -118,7 +118,7 @@
             </div>
             <br />
             <div class="row">
-                <div class="col-12">II. RTWAYAT PERKARA:</div>
+                <div class="col-12">II. RIWAYAT PERKARA:</div>
                 <div class="row col-12">
                     <div class="row">
                         <div class="col-6 px-4">1. &emsp; Kasus/masalah yang terjadi</div>
@@ -146,7 +146,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-6 px-5">d &emsp; Futusan pengadilan</div>
+                        <div class="col-6 px-5">d &emsp; Putusan pengadilan</div>
                         <div class="col-1">:</div>
                         <div class="col-5">
                             <div class="row">

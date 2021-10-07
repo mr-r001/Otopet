@@ -26,7 +26,7 @@
             </div>
 
             @if (session('success'))
-                <div class="alert alert-primary alert-dismissible show fade">
+                <div class="alert alert-success alert-dismissible show fade">
                     <div class="alert-body">
                         <button class="close" data-dismiss="alert">
                             <span>×</span>
@@ -37,7 +37,7 @@
             @endif
 
             <div class="section-body">
-                <div class="card card-primary">  
+                <div class="card card-success">  
                     <div class="card-header">
                         <a class="btn btn-success" href="{{ route('admin.keagamaan.filter') }}">
                             <i class="fas fa-print"></i>

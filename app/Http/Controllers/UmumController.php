@@ -62,6 +62,7 @@ class UmumController extends Controller
             'biodata'                   => 'required|integer',
             'kecamatan'                 => 'required|integer',
             'locus'                     => 'required|date',
+            'pasal'                     => 'required|string',
             'tgl_surat_pra_penuntutan'  => 'nullable|date',
             'nomor_surat_pra_penuntutan' => 'nullable|string',
             'tgl_surat_penuntutan'      => 'nullable|date',
@@ -76,6 +77,7 @@ class UmumController extends Controller
         $data->biodata_id                   = strip_tags(request()->post('biodata'));
         $data->kecamatan_id                 = strip_tags(request()->post('kecamatan'));
         $data->locus                        = request()->post('locus');
+        $data->pasal                        = request()->post('pasal');
         $data->tgl_surat_pra_penuntutan     = request()->post('tgl_surat_pra_penuntutan');
         $data->nomor_surat_pra_penuntutan   = strip_tags(request()->post('nomor_surat_pra_penuntutan'));
         $data->tgl_surat_penuntutan         = request()->post('tgl_surat_penuntutan');
@@ -132,6 +134,7 @@ class UmumController extends Controller
             'biodata'                   => 'required|integer',
             'kecamatan'                 => 'required|integer',
             'locus'                     => 'required|date',
+            'pasal'                     => 'required|string',
             'tgl_surat_pra_penuntutan'  => 'nullable|date',
             'nomor_surat_pra_penuntutan' => 'nullable|string',
             'tgl_surat_penuntutan'      => 'nullable|date',
@@ -145,6 +148,7 @@ class UmumController extends Controller
         $data->biodata_id                   = strip_tags(request()->post('biodata'));
         $data->kecamatan_id                 = strip_tags(request()->post('kecamatan'));
         $data->locus                        = request()->post('locus');
+        $data->pasal                        = request()->post('pasal');
         $data->tgl_surat_pra_penuntutan     = request()->post('tgl_surat_pra_penuntutan');
         $data->nomor_surat_pra_penuntutan   = strip_tags(request()->post('nomor_surat_pra_penuntutan'));
         $data->tgl_surat_penuntutan         = request()->post('tgl_surat_penuntutan');
@@ -179,34 +183,34 @@ class UmumController extends Controller
     {
         $month = request()->post('bulan');
         $bulan = request()->post('bulan');
-        if ($bulan == 'Januari') {
+        if ($bulan == 'JANUARI') {
             $bulan = '01';
-        } else if ($bulan == 'Februari') {
+        } else if ($bulan == 'FEBRUARI') {
             $bulan = '02';
-        } else if ($bulan == 'Maret') {
+        } else if ($bulan == 'MARET') {
             $bulan = '03';
-        } else if ($bulan == 'April') {
+        } else if ($bulan == 'APRIL') {
             $bulan = '04';
-        } else if ($bulan == 'Mei') {
+        } else if ($bulan == 'MEI') {
             $bulan = '05';
-        } else if ($bulan == 'Juni') {
+        } else if ($bulan == 'JUNI') {
             $bulan = '06';
-        } else if ($bulan == 'Juli') {
+        } else if ($bulan == 'JULI') {
             $bulan = '07';
-        } else if ($bulan == 'Agustus') {
+        } else if ($bulan == 'AGUSTUS') {
             $bulan = '08';
-        } else if ($bulan == 'September') {
+        } else if ($bulan == 'SEPTEMBER') {
             $bulan = '09';
-        } else if ($bulan == 'Oktober') {
+        } else if ($bulan == 'OKTOBER') {
             $bulan = '10';
-        } else if ($bulan == 'November') {
+        } else if ($bulan == 'NOVEMBER') {
             $bulan = '11';
-        } else if ($bulan == 'Desember') {
+        } else if ($bulan == 'DESEMBER') {
             $bulan = '12';
         }
         $year = request()->post('tahun');
-        $data = Umum::with('biodata')->whereYear('tgl', '=', $year)
-            ->whereMonth('tgl', '=', $month)
+        $data = Umum::with('biodata')->orderBy('updated_at', 'DESC')->orderBy('updated_at', 'DESC')->whereYear('tgl', '=', $year)
+            ->whereMonth('tgl', '=', $bulan)
             ->get();
 
         return view('admin.umum.show', compact('data', 'month', 'year'));

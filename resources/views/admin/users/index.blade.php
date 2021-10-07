@@ -83,7 +83,7 @@
                 </div>
             </div>
             <div class="section-body">
-                <div class="card card-primary">
+                <div class="card card-success">
                     <div class="card-header">
                         @if (auth()->user()->isAdmin())
                         <button class="btn btn-success ml-auto" id="btn-add">

@@ -174,29 +174,29 @@ class PengawasanKeagamaanController extends Controller
     {
         $month          = request()->post('bulan');
         $bulan = request()->post('bulan');
-        if ($bulan == 'Januari') {
+        if ($bulan == 'JANUARI') {
             $bulan = '01';
-        } else if ($bulan == 'Februari') {
+        } else if ($bulan == 'FEBRUARI') {
             $bulan = '02';
-        } else if ($bulan == 'Maret') {
+        } else if ($bulan == 'MARET') {
             $bulan = '03';
-        } else if ($bulan == 'April') {
+        } else if ($bulan == 'APRIL') {
             $bulan = '04';
-        } else if ($bulan == 'Mei') {
+        } else if ($bulan == 'MEI') {
             $bulan = '05';
-        } else if ($bulan == 'Juni') {
+        } else if ($bulan == 'JUNI') {
             $bulan = '06';
-        } else if ($bulan == 'Juli') {
+        } else if ($bulan == 'JULI') {
             $bulan = '07';
-        } else if ($bulan == 'Agustus') {
+        } else if ($bulan == 'AGUSTUS') {
             $bulan = '08';
-        } else if ($bulan == 'September') {
+        } else if ($bulan == 'SEPTEMBER') {
             $bulan = '09';
-        } else if ($bulan == 'Oktober') {
+        } else if ($bulan == 'OKTOBER') {
             $bulan = '10';
-        } else if ($bulan == 'November') {
+        } else if ($bulan == 'NOVEMBER') {
             $bulan = '11';
-        } else if ($bulan == 'Desember') {
+        } else if ($bulan == 'DESEMBER') {
             $bulan = '12';
         }
         $year           = request()->post('tahun');
@@ -204,9 +204,10 @@ class PengawasanKeagamaanController extends Controller
         $jabatan        = request()->post('jabatan');
         $nama           = request()->post('nama');
         $nip            = request()->post('nip');
-        $today          = date('d M Y');
-        $data = PengawasanKeagamaan::whereYear('tgl', '=', $year)
-            ->whereMonth('tgl', '=', $month)
+        $date = \Carbon\Carbon::now()->locale('id');
+        $today          = $date->day . ' ' . $date->monthName . ' ' . $date->year;
+        $data = PengawasanKeagamaan::orderBy('updated_at', 'DESC')->whereYear('tgl', '=', $year)
+            ->whereMonth('tgl', '=', $bulan)
             ->get();
 
         return view('admin.keagamaan.show', compact('data', 'month', 'year', 'atas_nama', 'jabatan', 'nama', 'nip', 'today'));

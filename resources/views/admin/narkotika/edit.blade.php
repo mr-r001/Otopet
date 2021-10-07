@@ -38,7 +38,7 @@
                     @method('PUT')
                     <div class="row">
                         <div class="col-lg-9">
-                            <div class="card card-primary">
+                            <div class="card card-success">
                                 <div class="card-header">
                                     <h4 class="card-title">Tambah Tindak Pidana Narkotika</h4>
                                 </div>
@@ -95,7 +95,7 @@
                                         <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
                                                 <label for="pasal">Pasal yang dilanggar <sup class="text-danger">*</sup></label>
-                                                <input type="text" class="form-control form-control-sm @error('pasal') is-invalid @enderror" name="pasal" id="pasal" value="@error('pasal'){{ old('pasal') }}@else{{ $data->pasal }}@enderror" placeholder="Masukkan Pasal yang dilanggar">
+                                                <textarea class="form-control form-control-sm @error('pasal') is-invalid @enderror" name="pasal" id="pasal" placeholder="Masukkan Pasal yang dilanggar">@error('pasal'){{ old('pasal') }}@else{{ $data->pasal }}@enderror</textarea>
                                                 <div class="invalid-feedback" id="valid-pasal">{{ $errors->first('pasal') }}</div>
                                             </div>
                                         </div>

@@ -103,7 +103,7 @@
                     </div>
                     <div class="row ">
                         <div class="col-6 px-4 ">
-                            2. &emsp; Latar belakang dan akibatnnya
+                            2. &emsp; Latar belakang dan akibatnya
                         </div>
                         <div class="col-1 ">:</div>
                         <div class="col-5 ">{{ $data->background }}</div>

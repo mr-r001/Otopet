@@ -63,7 +63,7 @@
                 <div class="col-6">{{ $data->kewarganegaraan->name }}</div>
             </div>
             <div class="row">
-                <div class="col-5 px-4">h. Nonior Telepon,/HP</div>
+                <div class="col-5 px-4">h. Nomor Telepon,/HP</div>
                 <div class="col-1">:</div>
                 <div class="col-6">{{ $data->phone }}</div>
             </div>
@@ -103,7 +103,7 @@
                 <div class="col-6">{{ $data->legitimasi_perkawinan }}</div>
             </div>
             <div class="row">
-                <div class="col-5 px-4">p. Tempat dan Tgl. Perkawinari</div>
+                <div class="col-5 px-4">p. Tempat dan Tgl. Perkawinan</div>
                 <div class="col-1">:</div>
                 <div class="col-6">{{ $data->tempat_perkawinan }}, {{ $data->tanggal_perkawinan }}</div>
             </div>

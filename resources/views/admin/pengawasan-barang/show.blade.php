@@ -90,7 +90,7 @@
         
         <div class="container float-right">
             <div class="row">
-                <div class="col-md-7 offset-md-7 mt-5 text-center">Pagar alam, {{ $today }}</div>
+                <div class="col-md-7 offset-md-7 mt-5 text-center">Pagar Alam, {{ $today }}</div>
                 <br>
                 <div class="col-md-7 offset-md-7 mb-5 text-center">{{ $jabatan }}</div>
             </div>

@@ -35,7 +35,7 @@
                     @csrf
                     <div class="row">
                         <div class="col-lg-4">
-                            <div class="card card-primary">
+                            <div class="card card-success">
                                 <div class="card-header">
                                     <h4 class="card-title">Identitas</h4>
                                 </div>
@@ -45,7 +45,7 @@
                                         <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
                                                 <label for="nomor">Nomor <sup class="text-danger">*</sup></label>
-                                                <input type="text" class="form-control form-control-sm @error('nomor') is-invalid @enderror" name="nomor" id="nomor" value="{{ old('nomor') }}" placeholder="Masukkan Nomor" maxlength="16">
+                                                <input type="text" class="form-control form-control-sm @error('nomor') is-invalid @enderror" name="nomor" id="nomor" value="{{ old('nomor') }}" placeholder="Masukkan Nomor">
                                                 <div class="invalid-feedback" id="valid-nomor">{{ $errors->first('nomor') }}</div>
                                             </div>
                                         </div>
@@ -266,7 +266,7 @@
                             </div>
                         </div>
                         <div class="col-lg-8">
-                            <div class="card card-primary">
+                            <div class="card card-success">
                                 <div class="card-header">
                                     <h4 class="card-title">Riwayat Perkara</h4>
                                 </div>
@@ -276,7 +276,7 @@
                                         <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
                                                 <label for="kasus">Kasus posisi secara singkat / pasal yang dilanggar</label>
-                                                <input type="text" class="form-control form-control-sm @error('kasus') is-invalid @enderror" name="kasus" id="kasus" value="{{ old('kasus') }}" placeholder="Masukkan Kasus posisi secara singkat / pasal yang dilanggar">
+                                                <textarea class="form-control form-control-sm @error('kasus') is-invalid @enderror" name="kasus" id="kasus" placeholder="Masukkan Kasus posisi secara singkat / pasal yang dilanggar"></textarea>
                                                 <div class="invalid-feedback" id="valid-kasus">{{ $errors->first('nama_istri') }}</div>
                                             </div>
                                         </div>

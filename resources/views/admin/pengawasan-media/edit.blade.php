@@ -39,7 +39,7 @@
                     <input type="hidden" id="id" value="{{ $data->id }}">
                     <div class="row">
                         <div class="col-lg-9">
-                            <div class="card card-primary">
+                            <div class="card card-success">
                                 <div class="card-header">
                                     <h4 class="card-title">Edit Pengawasan Media Komunikasi</h4>
                                 </div>

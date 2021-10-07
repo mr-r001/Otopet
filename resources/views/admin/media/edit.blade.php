@@ -38,7 +38,7 @@
                     @method('PUT')
                     <div class="row">
                         <div class="col-lg-6">
-                            <div class="card card-primary">
+                            <div class="card card-success">
                                 <div class="card-header">
                                     <h4 class="card-title">Identitas</h4>
                                 </div>
@@ -49,7 +49,7 @@
                                         <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
                                                 <label for="nomor">Nomor <sup class="text-danger">*</sup></label>
-                                                <input type="text" class="form-control form-control-sm @error('nomor') is-invalid @enderror" name="nomor" id="nomor" value="@error('nomor'){{ old('nomor') }}@else{{ $data->nomor }}@enderror" maxlength="16">
+                                                <input type="text" class="form-control form-control-sm @error('nomor') is-invalid @enderror" name="nomor" id="nomor" value="@error('nomor'){{ old('nomor') }}@else{{ $data->nomor }}@enderror">
                                                 <div class="invalid-feedback" id="valid-nomor">{{ $errors->first('nomor') }}</div>
                                             </div>
                                         </div>
@@ -193,7 +193,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <div class="card card-primary">
+                            <div class="card card-success">
                                 <div class="card-header">
                                     <h4 class="card-title">Biografi Intelijen</h4>
                                 </div>

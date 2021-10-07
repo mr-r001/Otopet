@@ -221,8 +221,8 @@ class KorupsiController extends Controller
             $month = '12';
         }
         $year = request()->post('tahun');
-        $data = Korupsi::with('biodata')->whereYear('tgl', '=', $year)
-            ->whereMonth('tgl', '=', $month)
+        $data = Korupsi::with('biodata')->orderBy('updated_at', 'DESC')->orderBy('updated_at', 'DESC')->whereYear('tgl', '=', $year)
+            ->whereMonth('tgl', '=', $bulan)
             ->get();
 
         return view('admin.korupsi.show', compact('data', 'month', 'year'));

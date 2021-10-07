@@ -22,7 +22,7 @@
             </div>
 
             <div class="section-body">
-                <div class="card card-primary">  
+                <div class="card card-success">  
                     <div class="card-body">
                         <form action="{{ route('admin.pembinaan.download') }}" method="POST">
                             @csrf
@@ -32,18 +32,18 @@
                                         <label for="bulan">Bulan</label>
                                         <select class="select2 form-control form-control-sm @error('bulan') is-invalid @enderror" name="bulan" id="bulan">
                                             <option value="" selected disabled>-- Pilih Bulan --</option>
-                                            <option value="Januari">Januari</option>
-                                            <option value="Februari">Februari</option>
-                                            <option value="Maret">Maret</option>
-                                            <option value="April">April</option>
-                                            <option value="Mei">Mei</option>
-                                            <option value="Juni">Juni</option>
-                                            <option value="Juli">Juli</option>
-                                            <option value="Agustus">Agustus</option>
-                                            <option value="September">September</option>
-                                            <option value="Oktober">Oktober</option>
-                                            <option value="November">November</option>
-                                            <option value="Desember">Desember</option>
+                                            <option value="JANUARI">Januari</option>
+                                            <option value="FEBRUARI">Februari</option>
+                                            <option value="MARET">Maret</option>
+                                            <option value="APRIL">April</option>
+                                            <option value="MEI">Mei</option>
+                                            <option value="JUNI">Juni</option>
+                                            <option value="JULI">Juli</option>
+                                            <option value="AGUSTUS">Agustus</option>
+                                            <option value="SEPTEMBER">September</option>
+                                            <option value="OKTOBER">Oktober</option>
+                                            <option value="NOVEMBER">November</option>
+                                            <option value="DESEMBER">Desember</option>
                                         </select>
                                         <div class="invalid-feedback" id="valid-bulan">{{ $errors->first('bulan') }}</div>
                                     </div>
