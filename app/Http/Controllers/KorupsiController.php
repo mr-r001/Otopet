@@ -195,6 +195,7 @@ class KorupsiController extends Controller
     public function download(Request $request)
     {
         $month = request()->post('bulan');
+        $bulan = request()->post('bulan');
         if ($month === 'Januari') {
             $month = '01';
         } else if ($month === 'Februari') {

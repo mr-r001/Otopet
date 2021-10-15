@@ -20,7 +20,7 @@
                     <li class="{{ request()->segment(2) == 'kelurahan' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.kelurahan.index') }}">Kelurahan</a></li>
                     <li class="{{ request()->segment(2) == 'agama' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.agama.index') }}">Agama</a></li>
                     <li class="{{ request()->segment(2) == 'pendidikan' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.pendidikan.index') }}">Pendidikan</a></li>
-                    <li class="{{ request()->segment(2) == 'legalitas-perkawinan' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.legalitas-perkawinan.index') }}">Legimitasi Perkawinan</a></li>
+                    <li class="{{ request()->segment(2) == 'legalitas-perkawinan' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.legalitas-perkawinan.index') }}">Legitimasi Perkawinan</a></li>
                     <li class="{{ request()->segment(2) == 'pekerjaan' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.pekerjaan.index') }}">Pekerjaan</a></li>
                     <li class="{{ request()->segment(2) == 'suku-bangsa' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.suku-bangsa.index') }}">Suku Bangsa</a></li>
                     <li class="{{ request()->segment(2) == 'negara' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.negara.index') }}">Negara</a></li>
@@ -491,7 +491,7 @@
                     <li class="{{ request()->segment(2) == 'kelurahan' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.kelurahan.index') }}">Kelurahan</a></li>
                     <li class="{{ request()->segment(2) == 'agama' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.agama.index') }}">Agama</a></li>
                     <li class="{{ request()->segment(2) == 'pendidikan' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.pendidikan.index') }}">Pendidikan</a></li>
-                    <li class="{{ request()->segment(2) == 'legalitas-perkawinan' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.legalitas-perkawinan.index') }}">Legimitasi Perkawinan</a></li>
+                    <li class="{{ request()->segment(2) == 'legalitas-perkawinan' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.legalitas-perkawinan.index') }}">Legitimasi Perkawinan</a></li>
                     <li class="{{ request()->segment(2) == 'pekerjaan' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.pekerjaan.index') }}">Pekerjaan</a></li>
                     <li class="{{ request()->segment(2) == 'suku-bangsa' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.suku-bangsa.index') }}">Suku Bangsa</a></li>
                     <li class="{{ request()->segment(2) == 'negara' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.negara.index') }}">Negara</a></li>

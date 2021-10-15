@@ -15,19 +15,19 @@ class CreateTIKTerdakwasTable extends Migration
     {
         Schema::create('t_i_k_terdakwas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nomor');
-            $table->string('nama');
-            $table->string('panggilan');
-            $table->string('tempat_lahir');
-            $table->date('tanggal_lahir');
-            $table->string('jenis_kelamin');
-            $table->unsignedSmallInteger('bangsa_id');
-            $table->unsignedSmallInteger('kewarganegaraan_id');
-            $table->string('kecamatan');
-            $table->string('alamat');
-            $table->string('phone');
-            $table->string('pasport');
-            $table->unsignedSmallInteger('agama_id');
+            $table->string('nomor')->nullable();
+            $table->string('nama')->nullable();
+            $table->string('panggilan')->nullable();
+            $table->string('tempat_lahir')->nullable();
+            $table->date('tanggal_lahir')->nullable();
+            $table->string('jenis_kelamin')->nullable();
+            $table->unsignedSmallInteger('bangsa_id')->nullable();
+            $table->unsignedSmallInteger('kewarganegaraan_id')->nullable();
+            $table->string('kecamatan')->nullable();
+            $table->string('alamat')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('pasport')->nullable();
+            $table->unsignedSmallInteger('agama_id')->nullable();
             $table->unsignedSmallInteger('pekerjaan_id');
             $table->string('alamat_kantor');
             $table->unsignedSmallInteger('perkawinan_id');

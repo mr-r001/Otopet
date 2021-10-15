@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'Legimitasi Perkawinan')
+@section('title', 'Legitimasi Perkawinan')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('backend/modules/datatables/datatables.min.css') }}">
@@ -21,9 +21,9 @@
                     <form id="company-form">
                         <input type="hidden" name="id" id="id">
                         <div class="form-group">
-                            <label for="name">Legimitasi Perkawinan <sup class="text-danger">*</sup></label>
+                            <label for="name">Legitimasi Perkawinan <sup class="text-danger">*</sup></label>
                             <input type="text" class="form-control" id="name" name="name"
-                                placeholder="Masukkan Legimitasi Perkawinan..." autocomplete="off">
+                                placeholder="Masukkan Legitimasi Perkawinan..." autocomplete="off">
                             <div class="invalid-feedback" id="valid-name"></div>
                         </div>
                     </form>
@@ -46,7 +46,7 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Legimitasi Perkawinan</h1>
+                <h1>Legitimasi Perkawinan</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item">
                         <a href="{{ route('admin.dashboard') }}">
@@ -56,7 +56,7 @@
                     </div>
                     <div class="breadcrumb-item">
                         <i class="fas fa-table"></i>
-                        Legimitasi Perkawinan
+                        Legitimasi Perkawinan
                     </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@
                                 <thead class="thead-light">
                                     <tr>
                                         <th>No</th>
-                                        <th>Legimitasi Perkawinan</th>
+                                        <th>Legitimasi Perkawinan</th>
                                         @if (auth()->user()->isAdmin())
                                             <th>Aksi</th>
                                         @elseif (auth()->user()->isOperator())
@@ -336,8 +336,8 @@
 
                         default :
                             swal({
-                                title: "Oh Yeah!",
-                                text: "It's safe, don't worry",
+                                title: "Oh Ya!",
+                                text: "Data aman, jangan khawatir",
                                 icon: "info",
                                 timer: 3000
                             });

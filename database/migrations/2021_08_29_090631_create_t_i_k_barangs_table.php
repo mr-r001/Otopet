@@ -15,18 +15,18 @@ class CreateTIKBarangsTable extends Migration
     {
         Schema::create('t_i_k_barangs', function (Blueprint $table) {
             $table->smallIncrements('id');
-            $table->string('nomor');
-            $table->string('nama');
-            $table->string('penerbit');
-            $table->string('pengarang');
-            $table->date('waktu');
-            $table->string('daerah');
-            $table->string('pencetak');
-            $table->string('nama_pimpinan');
-            $table->string('alamat_penerbit');
-            $table->string('alamat_percetakan');
-            $table->string('jumlah_oplah');
-            $table->string('kecamatan');
+            $table->string('nomor')->nullable();
+            $table->string('nama')->nullable();
+            $table->string('penerbit')->nullable();
+            $table->string('pengarang')->nullable();
+            $table->date('waktu')->nullable();
+            $table->string('daerah')->nullable();
+            $table->string('pencetak')->nullable();
+            $table->string('nama_pimpinan')->nullable();
+            $table->string('alamat_penerbit')->nullable();
+            $table->string('alamat_percetakan')->nullable();
+            $table->string('jumlah_oplah')->nullable();
+            $table->string('kecamatan')->nullable();
             $table->string('kasus')->nullable();
             $table->string('background')->nullable();
             $table->string('tindakan')->nullable();

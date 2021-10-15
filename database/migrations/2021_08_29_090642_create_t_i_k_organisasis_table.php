@@ -15,12 +15,12 @@ class CreateTIKOrganisasisTable extends Migration
     {
         Schema::create('t_i_k_organisasis', function (Blueprint $table) {
             $table->smallIncrements('id');
-            $table->string('nomor');
-            $table->string('nama');
-            $table->string('akte');
-            $table->string('status');
-            $table->date('berdiri');
-            $table->string('alamat');
+            $table->string('nomor')->nullable();
+            $table->string('nama')->nullable();
+            $table->string('akte')->nullable();
+            $table->string('status')->nullable();
+            $table->date('berdiri')->nullable();
+            $table->string('alamat')->nullable();
             $table->string('phone')->nullable();
             $table->string('web')->nullable();
             $table->string('nama_pengurus')->nullable();

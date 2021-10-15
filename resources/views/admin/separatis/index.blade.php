@@ -361,8 +361,8 @@
 
                         default :
                             swal({
-                                title: "Oh Yeah!",
-                                text: "It's safe, don't worry",
+                                title: "Oh Ya!",
+                                text: "Data aman, jangan khawatir",
                                 icon: "info",
                                 timer: 3000
                             });

@@ -53,7 +53,7 @@
                                 <a href="#">
                                     <img src="{{ asset('backend/img/pertahanan/2_Persatuan dan Kesatuan Bangsa.jpg') }}" alt="" width="40" height="40">
                                 </a>
-                                <p id="persatuan">Persatuan & <br> Kesatuan Indonesia ({{ count($persatuan) }})</p>
+                                <p id="persatuan">Persatuan & Kesatuan <br> Indonesia <br> ({{ count($persatuan) }})</p>
                             </div>
                             <div class="col">
                                 <a href="#">
@@ -134,43 +134,43 @@
                                 <a href="{{ route('admin.pancasila.index') }}">
                                     <img src="{{ asset('backend/img/pertahanan/1_Pengamanan Pancasila.jpg') }}" alt="" width="40" height="40">
                                 </a>
-                                <p id="pancasila">Pengamanan <br> Pancasila ({{ count($pancasila) }})</p>
+                                <p id="pancasila">Pengamanan <br> Pancasila <br>({{ count($pancasila) }})</p>
                             </div>
                             <div class="col">
                                 <a href="{{ route('admin.persatuan.index') }}">
                                     <img src="{{ asset('backend/img/pertahanan/2_Persatuan dan Kesatuan Bangsa.jpg') }}" alt="" width="40" height="40">
                                 </a>
-                                <p id="persatuan">Persatuan & <br> Kesatuan Indonesia ({{ count($persatuan) }})</p>
+                                <p id="persatuan">Persatuan & <br> Kesatuan Indonesia <br>({{ count($persatuan) }})</p>
                             </div>
                             <div class="col">
                                 <a href="{{ route('admin.separatis.index') }}">
                                     <img src="{{ asset('backend/img/pertahanan/3_Gerakan Separatis.jpg') }}" alt="" width="40" height="40">
                                 </a>
-                                <p id="gerakan">Gerakan <br> Separatis ({{ count($gerakan) }})</p>
+                                <p id="gerakan">Gerakan <br> Separatis <br>({{ count($gerakan) }})</p>
                             </div>
                             <div class="col">
                             <a href="{{ route('admin.penyelenggaraan.index') }}">
                                 <img src="{{ asset('backend/img/pertahanan/4_Penyelenggaraan Pemerintahan.jpg') }}" alt="" width="40" height="40">
                             </a>
-                                <p id="penyelenggaraan">Penyelenggaraan <br> Pemerintahan ({{ count($penyelenggaraan) }})</p>
+                                <p id="penyelenggaraan">Penyelenggaraan <br> Pemerintahan <br>({{ count($penyelenggaraan) }})</p>
                             </div>
                             <div class="col">
                             <a href="{{ route('admin.parpol.index') }}">
                                 <img src="{{ asset('backend/img/pertahanan/5_partai Politik, Pemilu, Pilkada.jpg') }}" alt="" width="40" height="40">
                             </a>
-                                <p id="parpol">Parpol Pemilu <br> Pilkada ({{ count($parpol) }})</p>
+                                <p id="parpol">Parpol Pemilu <br> Pilkada <br>({{ count($parpol) }})</p>
                             </div>
                             <div class="col">
                             <a href="{{ route('admin.terorisme.index') }}">
                                 <img src="{{ asset('backend/img/pertahanan/6_gerakan terorisme dan radikalisme.jpg') }}" alt="" width="40" height="40">
                             </a>
-                                <p id="terorisme">Terorisme & <br> Radikalisme ({{ count($terorisme) }})</p>
+                                <p id="terorisme">Terorisme & <br> Radikalisme <br>({{ count($terorisme) }})</p>
                             </div>
                             <div class="col">
                             <a href="{{ route('admin.teritorial.index') }}">
                                 <img src="{{ asset('backend/img/pertahanan/8_pengawasan wilayah teritorial.jpg') }}" alt="" width="40" height="40">
                             </a>
-                                <p id="teritorial">Pengawasan <br> Wilayah Teritorial ({{ count($teritorial) }})</p>
+                                <p id="teritorial">Pengawasan <br> Wilayah Teritorial <br>({{ count($teritorial) }})</p>
                             </div>
                         </div>
                         <p id="kecamatan">Kecamatan : </p>
@@ -188,31 +188,31 @@
                             <a href="{{ route('admin.cyber.index') }}">
                                 <img src="{{ asset('backend/img/pertahanan/9_kejahatan siber.jpg') }}" alt="" width="40" height="40">
                             </a>
-                                <p id="cyber">Cyber Crime ({{ count($cyber) }})</p>
+                                <p id="cyber">Cyber Crime <br>({{ count($cyber) }})</p>
                             </div>
                             <div class="col">
                             <a href="{{ route('admin.pencegahan.index') }}">
                                 <img src="{{ asset('backend/img/pertahanan/10_cekal.jpg') }}" alt="" width="40" height="40">
                             </a>
-                                <p id="pencegahan">Cegah Tangkal ({{ count($pencegahan) }})</p>
+                                <p id="pencegahan">Cegah Tangkal <br>({{ count($pencegahan) }})</p>
                             </div>
                             <div class="col">
                             <!-- <a href="/yolooooo"> -->
                                 <img src="{{ asset('backend/img/pertahanan/11_pengawasan orang asing.jpg') }}" alt="" width="40" height="40" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                             <!-- </a> -->
-                                <p id="pengawasan">Pengawasan <br> Orang Asing ({{ $pengawasan }})</p>
+                                <p id="pengawasan">Pengawasan <br> Orang Asing <br>({{ $pengawasan }})</p>
                             </div>
                             <div class="col">
                             <a href="{{ route('admin.pengamanan.index') }}">
                                 <img src="{{ asset('backend/img/pertahanan/12_pengamanan sumber daya organisasi kejaksaan.jpg') }}" alt="" width="40" height="40">
                             </a>
-                                <p id="pam">PAM-SDO <br> Kejaksaan ({{ count($pam) }})</p>
+                                <p id="pam">PAM-SDO <br> Kejaksaan <br>({{ count($pam) }})</p>
                             </div>
                             <div class="col">
                             <a href="{{ route('admin.perkara.index') }}">
                                 <img src="{{ asset('backend/img/pertahanan/13_Pengamanan penanganan perkara.jpg') }}" alt="" width="40" height="40">
                             </a>
-                                <p id="perkara">PAM Penanganan <br> Perkara ({{ count($perkara) }})</p>
+                                <p id="perkara">PAM Penanganan <br> Perkara <br>({{ count($perkara) }})</p>
                             </div>
                         </div>
                     </div>
@@ -239,19 +239,19 @@
                 success: function(data) {
                     $('#kecamatan').html('Kecamatan : Dempo Selatan')
 
-                    $('#pancasila').html('Pengamanan Pancasila ('+ data[0].length +')')
-                    $('#persatuan').html('Persatuan & Kesatuan Indonesia ('+ data[1].length +')')
-                    $('#gerakan').html('Gerakan Separatis ('+ data[2].length +')')
-                    $('#penyelenggaraan').html('Penyelenggaraan Pemerintahan ('+ data[3].length +')')
-                    $('#parpol').html('Parpol Pemilu Pilkada  ('+ data[4].length +')')
-                    $('#terorisme').html('Terorisme & Radikalisme ('+ data[5].length +')')
-                    $('#teritorial').html('Pengawasan Wilayah Teritorial ('+ data[6].length+ ')')
+                    $('#pancasila').html('Pengamanan <br> Pancasila <br>('+ data[0].length +')')
+                    $('#persatuan').html('Persatuan & <br> Kesatuan Indonesia <br>('+ data[1].length +')')
+                    $('#gerakan').html('Gerakan <br> Separatis <br>('+ data[2].length +')')
+                    $('#penyelenggaraan').html('Penyelenggaraan <br> Pemerintahan <br>('+ data[3].length +')')
+                    $('#parpol').html('Parpol Pemilu <br> Pilkada  <br>('+ data[4].length +')')
+                    $('#terorisme').html('Terorisme & <br> Radikalisme <br>('+ data[5].length +')')
+                    $('#teritorial').html('Pengawasan <br> Wilayah Teritorial <br>('+ data[6].length+ ')')
 
-                    $('#cyber').html('Cyber Crime ('+ data[7].length +')')
-                    $('#pencegahan').html('Cegah Tangkal ('+ data[8].length+ ')')
-                    $('#pengawasan').html('Pengawasan Orang Asing ('+ data[9].length +')')
-                    $('#pam').html('PAM-SDO Kejaksaan ('+ data[10].length +')')
-                    $('#perkara').html('PAM Penanganan Perkara ('+ data[11].length +')')
+                    $('#cyber').html('Cyber Crime <br>('+ data[7].length +')')
+                    $('#pencegahan').html('Cegah Tangkal <br>('+ data[8].length+ ')')
+                    $('#pengawasan').html('Pengawasan <br> Orang Asing <br>('+ data[9].length +')')
+                    $('#pam').html('PAM-SDO <br> Kejaksaan <br>('+ data[10].length +')')
+                    $('#perkara').html('PAM Penanganan <br> Perkara <br>('+ data[11].length +')')
                 },
                 error: function(data) {
                     console.log(data)
@@ -270,19 +270,19 @@
                 success: function(data) {
                     console.log(data);
                     $('#kecamatan').html('Kecamatan : Dempo Tengah')
-                    $('#pancasila').html('Pengamanan Pancasila ('+ data[0].length +')')
-                    $('#persatuan').html('Persatuan & Kesatuan Indonesia ('+ data[1].length +')')
-                    $('#gerakan').html('Gerakan Separatis ('+ data[2].length +')')
-                    $('#penyelenggaraan').html('Penyelenggaraan Pemerintahan ('+ data[3].length +')')
-                    $('#parpol').html('Parpol Pemilu Pilkada  ('+ data[4].length +')')
-                    $('#terorisme').html('Terorisme & Radikalisme ('+ data[5].length +')')
-                    $('#teritorial').html('Pengawasan Wilayah Teritorial ('+ data[6].length+ ')')
+                    $('#pancasila').html('Pengamanan <br> Pancasila <br>('+ data[0].length +')')
+                    $('#persatuan').html('Persatuan & <br> Kesatuan Indonesia <br>('+ data[1].length +')')
+                    $('#gerakan').html('Gerakan <br> Separatis <br>('+ data[2].length +')')
+                    $('#penyelenggaraan').html('Penyelenggaraan <br> Pemerintahan <br>('+ data[3].length +')')
+                    $('#parpol').html('Parpol Pemilu <br> Pilkada  <br>('+ data[4].length +')')
+                    $('#terorisme').html('Terorisme & <br> Radikalisme <br>('+ data[5].length +')')
+                    $('#teritorial').html('Pengawasan <br> Wilayah Teritorial <br>('+ data[6].length+ ')')
 
-                    $('#cyber').html('Cyber Crime ('+ data[7].length +')')
-                    $('#pencegahan').html('Cegah Tangkal ('+ data[8].length+ ')')
-                    $('#pengawasan').html('Pengawasan Orang Asing ('+ data[9].length +')')
-                    $('#pam').html('PAM-SDO Kejaksaan ('+ data[10].length +')')
-                    $('#perkara').html('PAM Penanganan Perkara ('+ data[11].length +')')
+                    $('#cyber').html('Cyber Crime <br>('+ data[7].length +')')
+                    $('#pencegahan').html('Cegah Tangkal <br>('+ data[8].length+ ')')
+                    $('#pengawasan').html('Pengawasan <br> Orang Asing <br>('+ data[9].length +')')
+                    $('#pam').html('PAM-SDO <br> Kejaksaan <br>('+ data[10].length +')')
+                    $('#perkara').html('PAM Penanganan <br> Perkara <br>('+ data[11].length +')')
                 },
                 error: function(data) {
                     console.log(data)
@@ -301,19 +301,19 @@
                 success: function(data) {
                     console.log(data);
                     $('#kecamatan').html('Kecamatan : Dempo Utara')
-                    $('#pancasila').html('Pengamanan Pancasila ('+ data[0].length +')')
-                    $('#persatuan').html('Persatuan & Kesatuan Indonesia ('+ data[1].length +')')
-                    $('#gerakan').html('Gerakan Separatis ('+ data[2].length +')')
-                    $('#penyelenggaraan').html('Penyelenggaraan Pemerintahan ('+ data[3].length +')')
-                    $('#parpol').html('Parpol Pemilu Pilkada  ('+ data[4].length +')')
-                    $('#terorisme').html('Terorisme & Radikalisme ('+ data[5].length +')')
-                    $('#teritorial').html('Pengawasan Wilayah Teritorial ('+ data[6].length+ ')')
+                    $('#pancasila').html('Pengamanan <br> Pancasila <br>('+ data[0].length +')')
+                    $('#persatuan').html('Persatuan & <br> Kesatuan Indonesia <br>('+ data[1].length +')')
+                    $('#gerakan').html('Gerakan <br> Separatis <br>('+ data[2].length +')')
+                    $('#penyelenggaraan').html('Penyelenggaraan <br> Pemerintahan <br>('+ data[3].length +')')
+                    $('#parpol').html('Parpol Pemilu <br> Pilkada  <br>('+ data[4].length +')')
+                    $('#terorisme').html('Terorisme & <br> Radikalisme <br>('+ data[5].length +')')
+                    $('#teritorial').html('Pengawasan <br> Wilayah Teritorial <br>('+ data[6].length+ ')')
 
-                    $('#cyber').html('Cyber Crime ('+ data[7].length +')')
-                    $('#pencegahan').html('Cegah Tangkal ('+ data[8].length+ ')')
-                    $('#pengawasan').html('Pengawasan Orang Asing ('+ data[9].length +')')
-                    $('#pam').html('PAM-SDO Kejaksaan ('+ data[10].length +')')
-                    $('#perkara').html('PAM Penanganan Perkara ('+ data[11].length +')')
+                    $('#cyber').html('Cyber Crime <br>('+ data[7].length +')')
+                    $('#pencegahan').html('Cegah Tangkal <br>('+ data[8].length+ ')')
+                    $('#pengawasan').html('Pengawasan <br> Orang Asing <br>('+ data[9].length +')')
+                    $('#pam').html('PAM-SDO <br> Kejaksaan <br>('+ data[10].length +')')
+                    $('#perkara').html('PAM Penanganan <br> Perkara <br>('+ data[11].length +')')
                 },
                 error: function(data) {
                     console.log(data)
@@ -331,19 +331,19 @@
                 },
                 success: function(data) {
                     $('#kecamatan').html('Kecamatan : Pagar Alam Selatan')
-                    $('#pancasila').html('Pengamanan Pancasila ('+ data[0].length +')')
-                    $('#persatuan').html('Persatuan & Kesatuan Indonesia ('+ data[1].length +')')
-                    $('#gerakan').html('Gerakan Separatis ('+ data[2].length +')')
-                    $('#penyelenggaraan').html('Penyelenggaraan Pemerintahan ('+ data[3].length +')')
-                    $('#parpol').html('Parpol Pemilu Pilkada  ('+ data[4].length +')')
-                    $('#terorisme').html('Terorisme & Radikalisme ('+ data[5].length +')')
-                    $('#teritorial').html('Pengawasan Wilayah Teritorial ('+ data[6].length+ ')')
+                    $('#pancasila').html('Pengamanan <br> Pancasila <br>('+ data[0].length +')')
+                    $('#persatuan').html('Persatuan & <br> Kesatuan Indonesia <br>('+ data[1].length +')')
+                    $('#gerakan').html('Gerakan <br> Separatis <br>('+ data[2].length +')')
+                    $('#penyelenggaraan').html('Penyelenggaraan <br> Pemerintahan <br>('+ data[3].length +')')
+                    $('#parpol').html('Parpol Pemilu <br> Pilkada  <br>('+ data[4].length +')')
+                    $('#terorisme').html('Terorisme & <br> Radikalisme <br>('+ data[5].length +')')
+                    $('#teritorial').html('Pengawasan <br> Wilayah Teritorial <br>('+ data[6].length+ ')')
 
-                    $('#cyber').html('Cyber Crime ('+ data[7].length +')')
-                    $('#pencegahan').html('Cegah Tangkal ('+ data[8].length+ ')')
-                    $('#pengawasan').html('Pengawasan Orang Asing ('+ data[9].length +')')
-                    $('#pam').html('PAM-SDO Kejaksaan ('+ data[10].length +')')
-                    $('#perkara').html('PAM Penanganan Perkara ('+ data[11].length +')')
+                    $('#cyber').html('Cyber Crime <br>('+ data[7].length +')')
+                    $('#pencegahan').html('Cegah Tangkal <br>('+ data[8].length+ ')')
+                    $('#pengawasan').html('Pengawasan <br> Orang Asing <br>('+ data[9].length +')')
+                    $('#pam').html('PAM-SDO <br> Kejaksaan <br>('+ data[10].length +')')
+                    $('#perkara').html('PAM Penanganan <br> Perkara <br>('+ data[11].length +')')
                 },
                 error: function(data) {
                     console.log(data)
@@ -362,19 +362,19 @@
                 success: function(data) {
                     console.log(data);
                     $('#kecamatan').html('Kecamatan : Pagar Alam Utara')
-                    $('#pancasila').html('Pengamanan Pancasila ('+ data[0].length +')')
-                    $('#persatuan').html('Persatuan & Kesatuan Indonesia ('+ data[1].length +')')
-                    $('#gerakan').html('Gerakan Separatis ('+ data[2].length +')')
-                    $('#penyelenggaraan').html('Penyelenggaraan Pemerintahan ('+ data[3].length +')')
-                    $('#parpol').html('Parpol Pemilu Pilkada  ('+ data[4].length +')')
-                    $('#terorisme').html('Terorisme & Radikalisme ('+ data[5].length +')')
-                    $('#teritorial').html('Pengawasan Wilayah Teritorial ('+ data[6].length+ ')')
+                    $('#pancasila').html('Pengamanan <br> Pancasila <br>('+ data[0].length +')')
+                    $('#persatuan').html('Persatuan & <br> Kesatuan Indonesia <br>('+ data[1].length +')')
+                    $('#gerakan').html('Gerakan <br> Separatis <br>('+ data[2].length +')')
+                    $('#penyelenggaraan').html('Penyelenggaraan <br> Pemerintahan <br>('+ data[3].length +')')
+                    $('#parpol').html('Parpol Pemilu <br> Pilkada  <br>('+ data[4].length +')')
+                    $('#terorisme').html('Terorisme & <br> Radikalisme <br>('+ data[5].length +')')
+                    $('#teritorial').html('Pengawasan <br> Wilayah Teritorial <br>('+ data[6].length+ ')')
 
-                    $('#cyber').html('Cyber Crime ('+ data[7].length +')')
-                    $('#pencegahan').html('Cegah Tangkal ('+ data[8].length+ ')')
-                    $('#pengawasan').html('Pengawasan Orang Asing ('+ data[9].length +')')
-                    $('#pam').html('PAM-SDO Kejaksaan ('+ data[10].length +')')
-                    $('#perkara').html('PAM Penanganan Perkara ('+ data[11].length +')')
+                    $('#cyber').html('Cyber Crime <br>('+ data[7].length +')')
+                    $('#pencegahan').html('Cegah Tangkal <br>('+ data[8].length+ ')')
+                    $('#pengawasan').html('Pengawasan <br> Orang Asing <br>('+ data[9].length +')')
+                    $('#pam').html('PAM-SDO <br> Kejaksaan <br>('+ data[10].length +')')
+                    $('#perkara').html('PAM Penanganan <br> Perkara <br>('+ data[11].length +')')
                 },
                 error: function(data) {
                     console.log(data)

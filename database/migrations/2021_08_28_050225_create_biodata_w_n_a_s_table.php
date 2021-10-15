@@ -15,9 +15,9 @@ class CreateBiodataWNASTable extends Migration
     {
         Schema::create('biodata_w_n_a_s', function (Blueprint $table) {
             $table->smallIncrements('id');
-            $table->string('pasport');
+            $table->string('pasport')->nullable();
             $table->string('name');
-            $table->unsignedSmallInteger('country_id');
+            $table->unsignedSmallInteger('country_id')->nullable();
             $table->timestamps();
 
             $table->foreign('country_id')->references('id')->on('negaras')->onDelete('cascade');
