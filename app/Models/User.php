@@ -52,6 +52,10 @@ class User extends Authenticatable
     {
         return $this->role()->whereIn('id', [1])->exists();
     }
+    public function isUser()
+    {
+        return $this->role()->whereIn('id', [2])->exists();
+    }
 
     public function isActiveSession()
     {

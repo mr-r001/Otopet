@@ -12,11 +12,7 @@ class AdminController extends Controller
     public function __construct()
     {
         $this->middleware(function ($request, $next) {
-            if (auth()->user()->isAdmin()) {
-                return $next($request);
-            } else {
-                abort(401);
-            }
+            return $next($request);
         })->except(['index']);
     }
 
