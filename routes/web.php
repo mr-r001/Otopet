@@ -148,6 +148,9 @@ Route::name('admin.')->prefix('admin')->middleware(['auth', 'admin', 'active', '
     // Kecamatan
     Route::resource('kecamatan', 'KecamatanController');
 
+    // Kabupaten
+    Route::resource('kabupaten', 'KabupatenController');
+
     // Agama
     Route::resource('agama', 'AgamaController');
 

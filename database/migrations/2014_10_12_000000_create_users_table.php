@@ -19,12 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('email', 50)->unique();
             $table->string('password', 60);
             $table->string('profile_url', 50)->default('user.jpg');
-            $table->string('dob')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('instagram')->nullable();
-            $table->text('address')->nullable();
-            $table->boolean('isCompleted')->default(0);
             $table->unsignedTinyInteger('role_id');
+            $table->string('kabupaten')->nullable();
             $table->timestamp('password_changed_at')->nullable();
             $table->rememberToken();
             $table->string('session_id', 40)->nullable();

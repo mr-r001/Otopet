@@ -20,11 +20,8 @@ class User extends Authenticatable
         'email',
         'password',
         'profile_url',
-        'dob',
-        'phone',
-        'instagram',
-        'isCompleted',
         'role_id',
+        'kabupaten',
     ];
 
     /**
