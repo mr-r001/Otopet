@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Kabupaten;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     protected $customMessages = [
-        'required' => ':Attribute harus di isi.',
+        'required' => 'Please input the :attribute.',
         'unique' => 'This :attribute has already been taken.',
         'max' => ':Attribute may not be more than :max characters.',
     ];
@@ -99,5 +100,31 @@ class UserController extends Controller
         $data = User::destroy($id);
 
         return response()->json($data);
+    }
+
+    public function changePassword()
+    {
+        $user = User::findOrFail(auth()->user()->id);
+
+        return view('admin.users.changePassword', compact('user'));
+    }
+
+    public function updatePassword()
+    {
+        $user = User::findOrFail(auth()->user()->id);
+
+        request()->validate([
+            'current_password' => 'required|string',
+            'password' => "required|string|confirmed",
+        ], $this->customMessages);
+
+        if (Hash::check(request()->post('current_password'), $user->password)) {
+            $user->password = bcrypt(request()->post('password'));
+            $user->password_changed_at = now();
+            $user->save();
+            return redirect()->back()->with('success', "Password has been changed!");
+        } else {
+            return redirect()->back()->withErrors(['current_password' => 'Your entered password is wrong, try again!']);
+        }
     }
 }

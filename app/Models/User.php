@@ -53,21 +53,6 @@ class User extends Authenticatable
         return $this->role()->whereIn('id', [1])->exists();
     }
 
-    public function isLeader()
-    {
-        return $this->role()->whereIn('id', [2])->exists();
-    }
-
-    public function isOperator()
-    {
-        return $this->role()->whereIn('id', [3])->exists();
-    }
-
-    public function isUser()
-    {
-        return $this->role()->whereIn('id', [4])->exists();
-    }
-
     public function isActiveSession()
     {
         return $this->session_id != session()->getId();

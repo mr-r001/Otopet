@@ -14,31 +14,28 @@
             {{-- Data --}}
             @if (auth()->user()->isAdmin())
                 <li class="{{ request()->segment(2) == 'dashboard' ? 'active' : '' }}">
-                    <a href="{{ route('admin.dashboard') }}" class="nav-link"><i class="fas fa-id-card"></i> <span>Dashboard</span></a>
+                    <a href="{{ route('admin.dashboard') }}" class="nav-link"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
                 </li>
                 <li class="{{ request()->segment(2) == 'user' ? 'active' : '' }}">
                     <a href="{{ route('admin.user.index') }}" class="nav-link"><i class="fas fa-id-card"></i> <span>Data KTP</span></a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-id-card"></i> <span>Cetak</span></a>
+                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-print"></i> <span>Cetak</span></a>
                     <ul class="dropdown-menu">
-                        <li class="{{ request()->segment(2) == 'wni' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.wni.index') }}">Model B-KWK</a></li>
-                        <li class="{{ request()->segment(2) == 'wna' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.wna.index') }}">Model B.1-KWK</a></li>
-                        <li class="{{ request()->segment(2) == 'wni' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.wni.index') }}">Model B.1.1-KWK</a></li>
-                        <li class="{{ request()->segment(2) == 'wna' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.wna.index') }}">Model B.2-KWK</a></li>
+                        <li class="{{ request()->segment(2) == 'wni' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.user.index') }}">Model B-KWK</a></li>
+                        <li class="{{ request()->segment(2) == 'wna' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.user.index') }}">Model B.1-KWK</a></li>
+                        <li class="{{ request()->segment(2) == 'wni' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.user.index') }}">Model B.1.1-KWK</a></li>
+                        <li class="{{ request()->segment(2) == 'wna' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.user.index') }}">Model B.2-KWK</a></li>
                     </ul>
                 </li>
                 <li class="{{ request()->segment(2) == 'user' ? 'active' : '' }}">
-                    <a href="{{ route('admin.user.index') }}" class="nav-link"><i class="fas fa-id-card"></i> <span>Ubah Password</span></a>
+                    <a href="{{ route('admin.user.index') }}" class="nav-link"><i class="fas fa-users"></i> <span>Hak Akses</span></a>
                 </li>
-                <li class="{{ request()->segment(2) == 'user' ? 'active' : '' }}">
-                    <a href="{{ route('admin.user.index') }}" class="nav-link"><i class="fas fa-id-card"></i> <span>Hak Akses</span></a>
+                <li class="{{ request()->segment(2) == 'kabupaten' ? 'active' : '' }}">
+                    <a href="{{ route('admin.kabupaten.index') }}" class="nav-link"><i class="fas fa-city"></i> <span>Data Kabupaten</span></a>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-id-card"></i> <span>Data Pendukung</span></a>
-                    <ul class="dropdown-menu">
-                        <li class="{{ request()->segment(2) == 'wni' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.kabupaten.index') }}">Daftar Kabupaten</a></li>
-                    </ul>
+                <li class="{{ request()->segment(2) == 'change-password' ? 'active' : '' }}">
+                    <a href="{{ route('admin.changePassword') }}" class="nav-link"><i class="fas fa-cogs"></i> <span>Pengaturan</span></a>
                 </li>
             @elseif ( auth()->user()->isLeader())
                 <li class="dropdown">
