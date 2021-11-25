@@ -21,14 +21,17 @@ Route::get('/', 'Auth\LoginController@adminLogin')->name('adminLogin');
 // ROUTE FOR ADMIN ONLY
 Route::name('admin.')->prefix('admin')->middleware(['auth', 'admin', 'active', 'check.session'])->group(function () {
 
-    // Admin
+    // Dashboard
     Route::get('dashboard', 'AdminController@dashboard')->name('dashboard');
+
+    // Data KTP
+    Route::resource('ktp', 'KTPController');
 
     // Hak Akses
     Route::resource('user', 'UserController');
     Route::get('change-password', 'UserController@changePassword')->name('changePassword');
     Route::post('update-password', 'UserController@updatePassword')->name('updatePassword');
 
-    // Kabupaten
+    // Data Kabupaten
     Route::resource('kabupaten', 'KabupatenController');
 });

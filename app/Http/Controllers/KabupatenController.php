@@ -33,7 +33,7 @@ class KabupatenController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            'name' => 'required|string|unique:Kabupatens,name|max:50',
+            'name' => 'required|string|unique:kabupatens,name|max:50',
         ], $this->customMessages);
 
         $Kabupaten = Kabupaten::create([
@@ -61,7 +61,7 @@ class KabupatenController extends Controller
         $Kabupaten = Kabupaten::findOrFail($id);
 
         request()->validate([
-            'name' => "required|string|unique:Kabupatens,name,{$Kabupaten->name},name|max:50",
+            'name' => "required|string|unique:kabupatens,name,{$Kabupaten->name},name|max:50",
         ], $this->customMessages);
 
         $Kabupaten->update([

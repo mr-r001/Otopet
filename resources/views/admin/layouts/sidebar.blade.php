@@ -16,8 +16,8 @@
                 <li class="{{ request()->segment(2) == 'dashboard' ? 'active' : '' }}">
                     <a href="{{ route('admin.dashboard') }}" class="nav-link"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a>
                 </li>
-                <li class="{{ request()->segment(2) == 'user' ? 'active' : '' }}">
-                    <a href="{{ route('admin.user.index') }}" class="nav-link"><i class="fas fa-id-card"></i> <span>Data KTP</span></a>
+                <li class="{{ request()->segment(2) == 'ktp' ? 'active' : '' }}">
+                    <a href="{{ route('admin.ktp.index') }}" class="nav-link"><i class="fas fa-id-card"></i> <span>Data KTP</span></a>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-print"></i> <span>Cetak</span></a>
@@ -30,6 +30,9 @@
                 </li>
                 <li class="{{ request()->segment(2) == 'user' ? 'active' : '' }}">
                     <a href="{{ route('admin.user.index') }}" class="nav-link"><i class="fas fa-users"></i> <span>Hak Akses</span></a>
+                </li>
+                <li class="{{ request()->segment(2) == 'kabupaten' ? 'active' : '' }}">
+                    <a href="{{ route('admin.kabupaten.index') }}" class="nav-link"><i class="fas fa-newspaper"></i> <span>Article</span></a>
                 </li>
                 <li class="{{ request()->segment(2) == 'kabupaten' ? 'active' : '' }}">
                     <a href="{{ route('admin.kabupaten.index') }}" class="nav-link"><i class="fas fa-city"></i> <span>Data Kabupaten</span></a>

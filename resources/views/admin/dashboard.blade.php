@@ -21,7 +21,7 @@
         <h1>Dashboard</h1>
       </div>
       <div class="section-body">
-        <div class="card card-success">
+        <div class="card card-primary">
             <div class="card-body" style="width: mac-content;display: flex;">
                 <h1>Welcome</h1>
             </div>
