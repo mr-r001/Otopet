@@ -44,6 +44,15 @@
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
+                                                <label for="photo">Foto KTP<sup class="text-danger">max : 2MB</sup></label>
+                                                <input type="file" class="form-control form-control-sm @error('photo') is-invalid @enderror" name="photo" id="photo" value="{{ old('photo') }}">
+                                                <div class="invalid-feedback" id="valid-photo">{{ $errors->first('photo') }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="form-group">
                                                 <label for="provinsi">Provinsi<sup class="text-danger">*</sup></label>
                                                 <input type="text" class="form-control form-control-sm @error('provinsi') is-invalid @enderror" name="provinsi" id="provinsi" value="{{ old('provinsi') }}" placeholder="Masukkan provinsi">
                                                 <div class="invalid-feedback" id="valid-provinsi">{{ $errors->first('provinsi') }}</div>
@@ -169,18 +178,9 @@
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
-                                                <label for="keterangan">Keterangan</label>
-                                                <input type="text" class="form-control form-control-sm @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" value="{{ old('keterangan') }}" placeholder="Masukkan tempat perkawinan">
+                                                <label for="keterangan">Agama</label>
+                                                <input type="text" class="form-control form-control-sm @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" value="{{ old('keterangan') }}" placeholder="Masukkan Agama">
                                                 <div class="invalid-feedback" id="valid-keterangan">{{ $errors->first('keterangan') }}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12">
-                                            <div class="form-group">
-                                                <label for="photo">Foto KTP<sup class="text-danger">max : 2MB</sup></label>
-                                                <input type="file" class="form-control form-control-sm @error('photo') is-invalid @enderror" name="photo" id="photo" value="{{ old('photo') }}">
-                                                <div class="invalid-feedback" id="valid-photo">{{ $errors->first('photo') }}</div>
                                             </div>
                                         </div>
                                     </div>

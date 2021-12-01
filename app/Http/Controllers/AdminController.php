@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\KTP;
 use App\Models\User;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
@@ -32,6 +33,12 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $nabire     = KTP::where('kabupaten', 'Nabire')->orderBy('updated_at', 'DESC')->get();
+        $dogiyai    = KTP::where('kabupaten', 'Dogiyai')->orderBy('updated_at', 'DESC')->get();
+        $deiyai     = KTP::where('kabupaten', 'Deiyai')->orderBy('updated_at', 'DESC')->get();
+        $paniai     = KTP::where('kabupaten', 'Paniai')->orderBy('updated_at', 'DESC')->get();
+        $intan      = KTP::where('kabupaten', 'Intan Jaya')->orderBy('updated_at', 'DESC')->get();
+        $mimika     = KTP::where('kabupaten', 'Mimika')->orderBy('updated_at', 'DESC')->get();
+        return view('admin.dashboard', compact('nabire', 'dogiyai', 'deiyai', 'paniai', 'intan', 'mimika'));
     }
 }

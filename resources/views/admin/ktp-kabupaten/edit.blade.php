@@ -19,7 +19,7 @@
                         </a>
                     </div>
                     <div class="breadcrumb-item">
-                        <a href="{{ route('admin.ktp.index') }}">
+                        <a href="{{ route('admin.ktp-by-kabupaten.index') }}">
                             <i class="fa fa-file-pdf"></i>
                             Data KTP
                         </a>
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="section-body">
-                <form method="POST" action="{{ route('admin.ktp.update', $data->id) }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('admin.ktp-by-kabupaten.update', $data->id) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="row">
@@ -67,11 +67,9 @@
                                         <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
                                                 <label for="kabupaten">Kabupaten<sup class="text-danger">*</sup></label>
-                                                <select class="form-control form-control-sm @error('kabupaten') is-invalid @enderror" name="kabupaten" id="kabupaten">
-                                                    <option value="" selected disabled>-- Pilih Kabupaten --</option>
-                                                        @foreach ($kabupatens as $kabupaten)
-                                                            <option value="{{ $kabupaten->name }}" {{ old('kabupaten') == $kabupaten->id || $data->kabupaten == $kabupaten->name ? 'selected' : '' }}>{{ $kabupaten->name }}</option>
-                                                        @endforeach
+                                                <select class="form-control form-control-sm @error('kabupaten') is-invalid @enderror" name="kabupaten" id="kabupaten" disabled>
+                                                    <option value="{{ auth()->user()->kabupaten }}" selected >{{ auth()->user()->kabupaten }}</option>
+
                                                 </select>
                                                 <div class="invalid-feedback" id="valid-kabupaten">{{ $errors->first('kabupaten') }}</div>
                                             </div>

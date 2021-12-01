@@ -27,6 +27,12 @@ Route::name('admin.')->prefix('admin')->middleware(['auth', 'admin', 'active', '
     // Data KTP
     Route::resource('ktp', 'KTPController');
 
+    // Data KTP By Kabupaten
+    Route::resource('ktp-by-kabupaten', 'KTPByKabupatenController');
+
+    // Data Article
+    Route::resource('article', 'ArticleController');
+
     // Hak Akses
     Route::resource('user', 'UserController');
     Route::get('change-password', 'UserController@changePassword')->name('changePassword');
