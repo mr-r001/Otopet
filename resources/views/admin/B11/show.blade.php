@@ -9,13 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>model B.1.1-KWK</title>
-    <link rel="stylesheet" href="{{ asset('backend/pdf/style.css') }}">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <section class="hero">
-        <h1>SURAT PERNYATAAN DAFTAR NAMA PENDUKUNG BAKAL PASANGAN CALON PERSEORANGAN DALAM PEMILIHAN GUBERNUR DAN WAKIL GUBERNUR</h1>
+        <h1 class="title2" style="left: 4%;position: relative;">SURAT PERNYATAAN DAFTAR NAMA PENDUKUNG BAKAL PASANGAN CALON PERSEORANGAN DALAM PEMILIHAN GUBERNUR DAN WAKIL GUBERNUR</h1>
     </section>
-    <div class="wrap-content">
+    <div class="wrap-content2">
         <p>
             Bersama ini kami, atas nama Bakal Pasangan Calon Peseorangan:
         </p>
@@ -30,7 +30,7 @@
         <p>Sebagai berikut <span class="titik">:</span></p>
         <br>
         <br>
-        <table class="table">
+        <table class="table tbl2">
             <thead>
               <tr>
                 <th scope="col">No</th>
@@ -44,7 +44,7 @@
                 <th scope="col">Tmp Lahir</th>
                 <th scope="col">Tgl Lahir</th>
                 <th scope="col">Pekerjaan</th>
-                <th scope="col">Belum/Sudah/PernahKawin</th>
+                <th scope="col">Belum/<br>Sudah/<br>PernahKawin</th>
                 <th scope="col">Ket</th>
               </tr>
             </thead>
@@ -99,29 +99,35 @@
           <br>
           <p>Demikian daftar nama pendukung ini dibuat untuk digunakan sebagaimana mestinya. Apabila ternyata kemudian hari ditemukan ketidak benaran terhadap data tersebut di atas, kami bersedia diberikan sanksi sesuai ketentuan perundangan-undangan yang berlaku.</p>
           <br>
-          <div class="footer">
-            <div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div class="footer ft">
+            <div class="lls">
                 <p>Bakal Calon Gubernur</p>
                 <br>
                 <br>
                 <br>
                 <br>
                 <br>
-                <h4>OTOPIANUS P.TEBAI</h4>
+                <h4 style="font-size: 18px;">OTOPIANUS P.TEBAI</h4>
             </div>
             <div>
                 <div class="box">
                     <p>materai <br> 600</p>
                 </div>
             </div>
-            <div>
+            <div class="llr">
                 <p>Papua, Maret 2024</p>
                 <br>
                 <br>
                 <br>
                 <br>
                 <br>
-                <h4>Bakal Calon Wakil Gubernur</h4>
+                <h4 style="font-size: 18px;">Bakal Calon Wakil Gubernur</h4>
             </div>
           </div>
         </div>
