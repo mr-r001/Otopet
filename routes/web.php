@@ -30,6 +30,12 @@ Route::name('admin.')->prefix('admin')->middleware(['auth', 'admin', 'active', '
     // Data KTP By Kabupaten
     Route::resource('ktp-by-kabupaten', 'KTPByKabupatenController');
 
+    // Cetak
+    Route::resource('B', 'B');
+    Route::resource('B1', 'B1');
+    Route::resource('B11', 'B11');
+    Route::resource('B2', 'B2');
+
     // Data Article
     Route::resource('article', 'ArticleController');
 

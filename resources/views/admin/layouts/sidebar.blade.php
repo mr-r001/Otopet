@@ -22,10 +22,10 @@
                 <li class="dropdown">
                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-print"></i> <span>Cetak</span></a>
                     <ul class="dropdown-menu">
-                        <li class="{{ request()->segment(2) == 'wni' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.user.index') }}">Model B-KWK</a></li>
-                        <li class="{{ request()->segment(2) == 'wna' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.user.index') }}">Model B.1-KWK</a></li>
-                        <li class="{{ request()->segment(2) == 'wni' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.user.index') }}">Model B.1.1-KWK</a></li>
-                        <li class="{{ request()->segment(2) == 'wna' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.user.index') }}">Model B.2-KWK</a></li>
+                        <li class="{{ request()->segment(2) == 'B' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.B.index') }}">Model B-KWK</a></li>
+                        <li class="{{ request()->segment(2) == 'B1' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.B1.index') }}">Model B.1-KWK</a></li>
+                        <li class="{{ request()->segment(2) == 'B11' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.B11.index') }}">Model B.1.1-KWK</a></li>
+                        <li class="{{ request()->segment(2) == 'B2' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.B2.index') }}">Model B.2-KWK</a></li>
                     </ul>
                 </li>
                 <li class="{{ request()->segment(2) == 'user' ? 'active' : '' }}">
