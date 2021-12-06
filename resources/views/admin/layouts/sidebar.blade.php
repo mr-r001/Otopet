@@ -37,6 +37,12 @@
                 <li class="{{ request()->segment(2) == 'kabupaten' ? 'active' : '' }}">
                     <a href="{{ route('admin.kabupaten.index') }}" class="nav-link"><i class="fas fa-city"></i> <span>Data Kabupaten</span></a>
                 </li>
+                <li class="{{ request()->segment(2) == 'kecamatan' ? 'active' : '' }}">
+                    <a href="{{ route('admin.kecamatan.index') }}" class="nav-link"><i class="fas fa-city"></i> <span>Data Kecamatan</span></a>
+                </li>
+                <li class="{{ request()->segment(2) == 'desa' ? 'active' : '' }}">
+                    <a href="{{ route('admin.desa.index') }}" class="nav-link"><i class="fas fa-city"></i> <span>Data Desa</span></a>
+                </li>
                 <li class="{{ request()->segment(2) == 'change-password' ? 'active' : '' }}">
                     <a href="{{ route('admin.changePassword') }}" class="nav-link"><i class="fas fa-cogs"></i> <span>Pengaturan</span></a>
                 </li>

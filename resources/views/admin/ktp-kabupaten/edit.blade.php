@@ -57,21 +57,51 @@
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
-                                                <label for="provinsi">Provinsi<sup class="text-danger">*</sup></label>
-                                                <input type="text" class="form-control form-control-sm @error('provinsi') is-invalid @enderror" name="provinsi" id="provinsi" value="@error('provinsi'){{ old('provinsi') }}@else{{ $data->provinsi }}@enderror" placeholder="Masukkan provinsi">
-                                                <div class="invalid-feedback" id="valid-provinsi">{{ $errors->first('provinsi') }}</div>
+                                                <label for="provinsi">Provinsi</label>
+                                                <select class="form-control form-control-sm @error('provinsi') is-invalid @enderror" name="provinsi" id="provinsi" disabled>
+                                                    @foreach ($provinces as $province)
+                                                        <option value="{{ $province->prov_id }}">{{ $province->prov_name }}</option>
+                                                    @endforeach
+                                                </select>
+                                                <div class="invalid-feedback" id="valid-kabupaten">{{ $errors->first('kabupaten') }}</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
-                                                <label for="kabupaten">Kabupaten<sup class="text-danger">*</sup></label>
+                                                <label for="kabupaten">Kabupaten</label>
                                                 <select class="form-control form-control-sm @error('kabupaten') is-invalid @enderror" name="kabupaten" id="kabupaten" disabled>
-                                                    <option value="{{ auth()->user()->kabupaten }}" selected >{{ auth()->user()->kabupaten }}</option>
-
+                                                    <option value="" selected>{{ auth()->user()->city->city_name }}</option>
                                                 </select>
                                                 <div class="invalid-feedback" id="valid-kabupaten">{{ $errors->first('kabupaten') }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="kecamatan">Kecamatan</label>
+                                                <select class="form-control form-control-sm @error('kecamatan') is-invalid @enderror" name="kecamatan" id="kecamatan">
+                                                    <option value="" selected disabled>-- Pilih Kecamatan --</option>
+                                                    @foreach ($districts as $district)
+                                                        <option value="{{ $district->id }}">{{ $district->dis_name }}</option>
+                                                    @endforeach
+                                                </select>
+                                                <small>*) Kosongkan jika tidak ingin dirubah</small>
+                                                <div class="invalid-feedback" id="valid-kecamatan">{{ $errors->first('kecamatan') }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="desa">Desa/Kelurahan</label>
+                                                <select class="form-control form-control-sm @error('desa') is-invalid @enderror" name="desa" id="desa">
+                                                    <option value="" selected disabled>-- Pilih Desa/Kelurahan --</option>
+                                                </select>
+                                                <small>*) Kosongkan jika tidak ingin dirubah</small>
+                                                <div class="invalid-feedback" id="valid-desa">{{ $errors->first('desa') }}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -152,25 +182,6 @@
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
-                                                <label for="desa">Desa/Kelurahan<sup class="text-danger">*</sup></label>
-                                                <input type="text" class="form-control form-control-sm @error('desa') is-invalid @enderror" name="desa" id="desa" value="@error('desa'){{ old('desa') }}@else{{ $data->desa }}@enderror" placeholder="Masukkan desa">
-                                                <div class="invalid-feedback" id="valid-desa">{{ $errors->first('desa') }}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12">
-                                            <div class="form-group">
-                                                <label for="kecamatan">Kecamatan<sup class="text-danger">*</sup></label>
-                                                <input type="text" class="form-control form-control-sm @error('kecamatan') is-invalid @enderror" name="kecamatan" id="kecamatan" value="@error('kecamatan'){{ old('kecamatan') }}@else{{ $data->kecamatan }}@enderror" placeholder="Masukkan kecamatan">
-                                                <div class="invalid-feedback" id="valid-kecamatan">{{ $errors->first('kecamatan') }}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12">
-                                            <div class="form-group">
                                                 <label for="status_perkawinan">Status Perkawinan<sup class="text-danger">*</sup></label>
                                                 <input type="text" class="form-control form-control-sm @error('status_perkawinan') is-invalid @enderror" name="status_perkawinan" id="status_perkawinan" value="@error('status_perkawinan'){{ old('status_perkawinan') }}@else{{ $data->status_perkawinan }}@enderror" placeholder="Masukkan status perkawinan">
                                                 <div class="invalid-feedback" id="valid-status_perkawinan">{{ $errors->first('status_perkawinan') }}</div>
@@ -180,8 +191,8 @@
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
-                                                <label for="keterangan">Agama</label>
-                                                <input type="text" class="form-control form-control-sm @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" value="@error('keterangan'){{ old('keterangan') }}@else{{ $data->keterangan }}@enderror" placeholder="Masukkan Agama">
+                                                <label for="keterangan">Pekerjaan</label>
+                                                <input type="text" class="form-control form-control-sm @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" value="@error('keterangan'){{ old('keterangan') }}@else{{ $data->keterangan }}@enderror" placeholder="Masukkan Pekerjaan">
                                                 <div class="invalid-feedback" id="valid-keterangan">{{ $errors->first('keterangan') }}</div>
                                             </div>
                                         </div>
@@ -221,6 +232,26 @@
             $('.select2').on('select2:selecting', function() {
                 $(this).removeClass('is-invalid');
             });
+
+            $('body').on('change', '#kecamatan', function() {
+                var id = $(this).val();
+                ajaxurl = '{{ route("admin.desa.search", "id") }}'
+                $.ajax({
+                    type: 'GET',
+                    url: ajaxurl,
+                    data: {
+                        id: id,
+                    },
+                    success: function(data) {
+                        $.each(data, function (i, data) {
+                            $('#desa').append(new Option(data.subdis_name, data.id))
+                        })
+                    },
+                    error: function(data) {
+                        console.log(data)
+                    }
+                });
+            })
          
             function filePreview2(input) {
                 if(input.files && input.files[0]) {

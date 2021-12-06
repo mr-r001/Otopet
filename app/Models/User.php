@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -21,7 +20,7 @@ class User extends Authenticatable
         'password',
         'profile_url',
         'role_id',
-        'kabupaten',
+        'city_id',
     ];
 
     /**
@@ -46,6 +45,11 @@ class User extends Authenticatable
     public function role()
     {
         return $this->belongsTo('App\Models\Role');
+    }
+
+    public function city()
+    {
+        return $this->belongsTo('App\Models\City');
     }
 
     public function isAdmin()

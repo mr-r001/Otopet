@@ -46,4 +46,13 @@ Route::name('admin.')->prefix('admin')->middleware(['auth', 'admin', 'active', '
 
     // Data Kabupaten
     Route::resource('kabupaten', 'KabupatenController');
+    Route::get('kabupaten/search', 'KabupatenController@search')->name('kabupaten.search');
+
+    // Data Kecamatan
+    Route::resource('kecamatan', 'KecamatanController');
+    Route::get('kecamatan/search/{id}', 'KecamatanController@search')->name('kecamatan.search');
+
+    // Data Desa
+    Route::resource('desa', 'DesaController');
+    Route::get('desa/search/{id}', 'DesaController@search')->name('desa.search');
 });

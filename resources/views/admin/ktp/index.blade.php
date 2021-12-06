@@ -52,7 +52,7 @@
                                         <th>No</th>
                                         <th>NIK</th>
                                         <th>Nama</th>
-                                        <th>Kabupaten</th>
+                                        <th>Alamat</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -99,10 +99,9 @@
                         name: 'nama'
                     },
                     {
-                        data: 'kabupaten',
-                        name: 'kabupaten'
+                        data: 'alamat',
+                        name: 'alamat'
                     },
-                   
                     {
                         data: 'action',
                         name: 'action',

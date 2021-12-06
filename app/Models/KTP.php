@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class KTP extends Model
 {
     protected $fillable = [
-        'provinsi',
-        'kabupaten',
+        'prov_id',
+        'city_id',
+        'dis_id',
+        'subdis_id',
         'nik',
         'nama',
         'tempat_lahir',
@@ -17,8 +19,6 @@ class KTP extends Model
         'alamat',
         'rt',
         'rw',
-        'desa',
-        'kecamatan',
         'status_perkawinan',
         'keterangan',
         'photo',

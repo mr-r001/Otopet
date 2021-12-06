@@ -54,8 +54,12 @@
                                         <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
                                                 <label for="provinsi">Provinsi<sup class="text-danger">*</sup></label>
-                                                <input type="text" class="form-control form-control-sm @error('provinsi') is-invalid @enderror" name="provinsi" id="provinsi" value="{{ old('provinsi') }}" placeholder="Masukkan provinsi">
-                                                <div class="invalid-feedback" id="valid-provinsi">{{ $errors->first('provinsi') }}</div>
+                                                <select class="form-control form-control-sm @error('provinsi') is-invalid @enderror" name="provinsi" id="provinsi" disabled>
+                                                    @foreach ($provinces as $province)
+                                                        <option value="{{ $province->prov_id }}">{{ $province->prov_name }}</option>
+                                                    @endforeach
+                                                </select>
+                                                <div class="invalid-feedback" id="valid-kabupaten">{{ $errors->first('kabupaten') }}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -65,11 +69,33 @@
                                                 <label for="kabupaten">Kabupaten<sup class="text-danger">*</sup></label>
                                                 <select class="form-control form-control-sm @error('kabupaten') is-invalid @enderror" name="kabupaten" id="kabupaten">
                                                     <option value="" selected disabled>-- Pilih Kabupaten --</option>
-                                                        @foreach ($kabupatens as $kabupaten)
-                                                            <option value="{{ $kabupaten->name }}" {{ old('kabupaten') == $kabupaten->name ? 'selected' : '' }}>{{ $kabupaten->name }}</option>
+                                                        @foreach ($cities as $city)
+                                                            <option value="{{ $city->id }}" {{ old('kabupaten') == $city->city_name ? 'selected' : '' }}>{{ $city->city_name }}</option>
                                                         @endforeach
                                                 </select>
                                                 <div class="invalid-feedback" id="valid-kabupaten">{{ $errors->first('kabupaten') }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="kecamatan">Kecamatan<sup class="text-danger">*</sup></label>
+                                                <select class="form-control form-control-sm @error('kecamatan') is-invalid @enderror" name="kecamatan" id="kecamatan">
+                                                    <option value="" selected disabled>-- Pilih Kecamatan --</option>
+                                                </select>
+                                                <div class="invalid-feedback" id="valid-kecamatan">{{ $errors->first('kecamatan') }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="form-group">
+                                                <label for="desa">Desa/Kelurahan<sup class="text-danger">*</sup></label>
+                                                <select class="form-control form-control-sm @error('desa') is-invalid @enderror" name="desa" id="desa">
+                                                    <option value="" selected disabled>-- Pilih Desa/Kelurahan --</option>
+                                                </select>
+                                                <div class="invalid-feedback" id="valid-desa">{{ $errors->first('desa') }}</div>
                                             </div>
                                         </div>
                                     </div>
@@ -150,25 +176,6 @@
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
-                                                <label for="desa">Desa/Kelurahan<sup class="text-danger">*</sup></label>
-                                                <input type="text" class="form-control form-control-sm @error('desa') is-invalid @enderror" name="desa" id="desa" value="{{ old('desa') }}" placeholder="Masukkan desa">
-                                                <div class="invalid-feedback" id="valid-desa">{{ $errors->first('desa') }}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12">
-                                            <div class="form-group">
-                                                <label for="kecamatan">Kecamatan<sup class="text-danger">*</sup></label>
-                                                <input type="text" class="form-control form-control-sm @error('kecamatan') is-invalid @enderror" name="kecamatan" id="kecamatan" value="{{ old('kecamatan') }}" placeholder="Masukkan kecamatan">
-                                                <div class="invalid-feedback" id="valid-kecamatan">{{ $errors->first('kecamatan') }}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12">
-                                            <div class="form-group">
                                                 <label for="status_perkawinan">Status Perkawinan<sup class="text-danger">*</sup></label>
                                                 <input type="text" class="form-control form-control-sm @error('status_perkawinan') is-invalid @enderror" name="status_perkawinan" id="status_perkawinan" value="{{ old('status_perkawinan') }}" placeholder="Masukkan status perkawinan">
                                                 <div class="invalid-feedback" id="valid-status_perkawinan">{{ $errors->first('status_perkawinan') }}</div>
@@ -178,8 +185,8 @@
                                     <div class="row">
                                         <div class="col-md-12 col-sm-12">
                                             <div class="form-group">
-                                                <label for="keterangan">Agama</label>
-                                                <input type="text" class="form-control form-control-sm @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" value="{{ old('keterangan') }}" placeholder="Masukkan Agama">
+                                                <label for="keterangan">Pekerjaan</label>
+                                                <input type="text" class="form-control form-control-sm @error('keterangan') is-invalid @enderror" name="keterangan" id="keterangan" value="{{ old('keterangan') }}" placeholder="Masukkan Pekerjaan">
                                                 <div class="invalid-feedback" id="valid-keterangan">{{ $errors->first('keterangan') }}</div>
                                             </div>
                                         </div>
@@ -227,6 +234,44 @@
                 } else {
                     $("#kecamatan_").attr("readonly", true); 
                 }
+            })
+            $('body').on('change', '#kabupaten', function() {
+                var id = $(this).val();
+                ajaxurl = '{{ route("admin.kecamatan.search", "id") }}'
+                $.ajax({
+                    type: 'GET',
+                    url: ajaxurl,
+                    data: {
+                        id: id,
+                    },
+                    success: function(data) {
+                        $.each(data, function (i,data) {
+                            $('#kecamatan').append(new Option(data.dis_name, data.id))
+                        })
+                    },
+                    error: function(data) {
+                        console.log(data)
+                    }
+                });
+            })
+            $('body').on('change', '#kecamatan', function() {
+                var id = $(this).val();
+                ajaxurl = '{{ route("admin.desa.search", "id") }}'
+                $.ajax({
+                    type: 'GET',
+                    url: ajaxurl,
+                    data: {
+                        id: id,
+                    },
+                    success: function(data) {
+                        $.each(data, function (i, data) {
+                            $('#desa').append(new Option(data.subdis_name, data.id))
+                        })
+                    },
+                    error: function(data) {
+                        console.log(data)
+                    }
+                });
             })
 
             function filePreview2(input) {

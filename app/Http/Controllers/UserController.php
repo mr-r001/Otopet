@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kabupaten;
+use App\Models\City;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -18,13 +18,14 @@ class UserController extends Controller
     public function index()
     {
         if (request()->ajax()) {
-            return datatables()->of(User::with('role')->whereNotIn('id', [1])->orderBy('updated_at', 'DESC')->get())
+            return datatables()->of(User::with('role', 'city')->whereNotIn('id', [1])->orderBy('updated_at', 'DESC')->get())
+                ->addColumn('city', 'admin.users.city')
                 ->addColumn('action', 'admin.users.action')
-                ->rawColumns(['action'])
+                ->rawColumns(['city', 'action'])
                 ->addIndexColumn()
                 ->make(true);
         }
-        $kabupaten  = Kabupaten::orderBy('name')->get();
+        $kabupaten  = City::orderBy('city_name')->get();
         return view('admin.users.index', compact('kabupaten'));
     }
 
@@ -46,7 +47,7 @@ class UserController extends Controller
             'name'          => strip_tags(request()->post('name')),
             'email'         => strip_tags(request()->post('email')),
             'role_id'       => 2,
-            'kabupaten'     => strip_tags(request()->post('kabupaten')),
+            'city_id'       => strip_tags(request()->post('kabupaten')),
             'password'      => bcrypt(request()->post('password')),
             'profile_url'   => 'admin.jpg',
         ]);
@@ -77,14 +78,26 @@ class UserController extends Controller
 
         $data = User::findOrFail($id);
 
-        $data->update([
-            'name'          => strip_tags(request()->post('name')),
-            'email'         => strip_tags(request()->post('email')),
-            'role_id'       => 2,
-            'kabupaten'     => request()->post('kabupaten'),
-            'password'      => bcrypt(request()->post('password')),
-            'profile_url'   => 'admin.jpg',
-        ]);
+        if (request()->post('password') == '') {
+            $data->update([
+                'name'          => strip_tags(request()->post('name')),
+                'email'         => strip_tags(request()->post('email')),
+                'role_id'       => 2,
+                'city_id'       => request()->post('kabupaten'),
+                'profile_url'   => 'admin.jpg',
+            ]);
+        } else {
+            $data->update([
+                'name'          => strip_tags(request()->post('name')),
+                'email'         => strip_tags(request()->post('email')),
+                'role_id'       => 2,
+                'city_id'       => request()->post('kabupaten'),
+                'password'      => bcrypt(request()->post('password')),
+                'profile_url'   => 'admin.jpg',
+            ]);
+        }
+
+
 
         return response()->json($data);
     }

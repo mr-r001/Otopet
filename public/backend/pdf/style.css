@@ -24,9 +24,27 @@ section {
     text-align: center;
     font-weight: bold;
     font-size: 30px;
-    width: 80vw;
+    width: 100vw;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
+}
+
+.hero .title {
+    position: relative;
+    left: 23%;
+}
+
+.title2 {
+    position: relative;
+    left: 10%;
+}
+
+.demikian {
+    position: relative;
+    top: 60px;
+    width: 100vw;
+    margin-top: 60px;
 }
 
 .menyatakan {
@@ -44,17 +62,17 @@ th {
 
 .titik {
     position: absolute;
-    left: 15vw;
+    left: 25vw;
 }
 
 .titik2 {
     position: absolute;
-    left: 25vw;
+    left: 35vw;
 }
 
 .content22 {
     position: absolute;
-    left: 30vw;
+    left: 40vw;
 }
 
 .wrap-content {
@@ -65,12 +83,41 @@ th {
     margin-right: auto;
 }
 
+.wrap-content2 {
+    position: relative;
+    top: 4px;
+    width: 77vw;
+    right: 15%;
+    margin-left: auto;
+    transform: scale(0.9);
+    margin-right: auto;
+}
+
+.tbl2 {
+    transform: scale(0.9);
+    position: relative;
+    right: 9%;
+}
+
+.wrap-content {
+    position: relative;
+    top: 44px;
+    width: 77vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ft {
+    position: relative;
+    left: 20%;
+}
+
 .footer {
     position: relative;
     width: 100%;
-    height: 300px;
+    height: 290px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -83,8 +130,17 @@ th {
     text-align: center;
 }
 
-.box {
-    width: 200px;
+.lls {
+    margin-right: 100px;
+}
+
+.llr {
+    margin-left: 100px;
+}
+
+.footer .box {
+    position: absolute;
+    width: 130px;
     height: 120px;
     border: 1px solid black;
 }
@@ -149,9 +205,9 @@ th {
 }
 
 .tg {
-    margin-top: 90px;
+    margin-top: 20px;
     border: 1px solid black;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
 }
 
 td,
@@ -162,4 +218,8 @@ th {
 
 tr {
     height: 40px;
+}
+
+.berdasarkan {
+    position: relative;
 }

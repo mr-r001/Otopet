@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use App\Models\Kabupaten;
 use Illuminate\Http\Request;
 
@@ -16,9 +17,7 @@ class KabupatenController extends Controller
     public function index()
     {
         if (request()->ajax()) {
-            return datatables()->of(Kabupaten::orderBy('name', 'ASC')->get())
-                ->addColumn('action', 'admin.kabupaten.action')
-                ->rawColumns(['action'])
+            return datatables()->of(City::orderBy('city_name', 'ASC')->get())
                 ->addIndexColumn()
                 ->make(true);
         }
@@ -32,15 +31,7 @@ class KabupatenController extends Controller
 
     public function store(Request $request)
     {
-        request()->validate([
-            'name' => 'required|string|unique:kabupatens,name|max:50',
-        ], $this->customMessages);
-
-        $Kabupaten = Kabupaten::create([
-            'name' => strip_tags(request()->post('name')),
-        ]);
-
-        return response()->json($Kabupaten);
+        //
     }
 
     public function show($id)
@@ -50,31 +41,26 @@ class KabupatenController extends Controller
 
     public function edit($id)
     {
-        $Kabupaten = Kabupaten::findOrFail($id);
-
-        return response()->json($Kabupaten);
+        //
     }
 
 
     public function update(Request $request, $id)
     {
-        $Kabupaten = Kabupaten::findOrFail($id);
-
-        request()->validate([
-            'name' => "required|string|unique:kabupatens,name,{$Kabupaten->name},name|max:50",
-        ], $this->customMessages);
-
-        $Kabupaten->update([
-            'name' => strip_tags(request()->post('name')),
-        ]);
-
-        return response()->json($Kabupaten);
+        // 
     }
 
     public function destroy($id)
     {
-        $Kabupaten = Kabupaten::destroy($id);
+        //
+    }
 
-        return response()->json($Kabupaten);
+    public function search()
+    {
+        $data = City::get();
+
+        dd($data);
+
+        return $data;
     }
 }

@@ -33,12 +33,12 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        $nabire     = KTP::where('kabupaten', 'Nabire')->orderBy('updated_at', 'DESC')->get();
-        $dogiyai    = KTP::where('kabupaten', 'Dogiyai')->orderBy('updated_at', 'DESC')->get();
-        $deiyai     = KTP::where('kabupaten', 'Deiyai')->orderBy('updated_at', 'DESC')->get();
-        $paniai     = KTP::where('kabupaten', 'Paniai')->orderBy('updated_at', 'DESC')->get();
-        $intan      = KTP::where('kabupaten', 'Intan Jaya')->orderBy('updated_at', 'DESC')->get();
-        $mimika     = KTP::where('kabupaten', 'Mimika')->orderBy('updated_at', 'DESC')->get();
+        $nabire     = KTP::where('city_id', 1)->orderBy('updated_at', 'DESC')->get();
+        $dogiyai    = KTP::where('city_id', 2)->orderBy('updated_at', 'DESC')->get();
+        $deiyai     = KTP::where('city_id', 3)->orderBy('updated_at', 'DESC')->get();
+        $paniai     = KTP::where('city_id', 4)->orderBy('updated_at', 'DESC')->get();
+        $intan      = KTP::where('city_id', 5)->orderBy('updated_at', 'DESC')->get();
+        $mimika     = KTP::where('city_id', 6)->orderBy('updated_at', 'DESC')->get();
         return view('admin.dashboard', compact('nabire', 'dogiyai', 'deiyai', 'paniai', 'intan', 'mimika'));
     }
 }

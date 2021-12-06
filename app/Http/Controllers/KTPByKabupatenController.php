@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
+use App\Models\District;
 use App\Models\Kabupaten;
 use App\Models\KTP;
+use App\Models\Province;
+use App\Models\Subdistrict;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\File;
@@ -26,9 +30,9 @@ class KTPByKabupatenController extends Controller
      */
     public function index()
     {
-        $kabupaten = auth()->user()->kabupaten;
+        $kabupaten = auth()->user()->city_id;
         if (request()->ajax()) {
-            return datatables()->of(KTP::where('kabupaten', $kabupaten)->orderBy('updated_at', 'DESC')->get())
+            return datatables()->of(KTP::where('city_id', $kabupaten)->orderBy('updated_at', 'DESC')->get())
                 ->addColumn('action', 'admin.ktp-kabupaten.action')
                 ->rawColumns(['action'])
                 ->addIndexColumn()
@@ -44,7 +48,12 @@ class KTPByKabupatenController extends Controller
      */
     public function create()
     {
-        return view('admin.ktp-kabupaten.create');
+        $city = auth()->user()->city_id;
+
+        $provinces = Province::orderBy('prov_name')->get();
+        $districts = District::orderBy('dis_name')->where('city_id', $city)->get();
+        $subdistricts = Subdistrict::orderBy('subdis_name')->get();
+        return view('admin.ktp-kabupaten.create', compact('provinces', 'districts', 'subdistricts'));
     }
 
     /**
@@ -56,7 +65,8 @@ class KTPByKabupatenController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            'provinsi'              => 'required|string',
+            'kecamatan'             => 'required|string',
+            'desa'                  => 'required|string',
             'nik'                   => 'required|integer|unique:k_t_p_s,nik|min:16',
             'nama'                  => 'required|string',
             'tempat_lahir'          => 'required|string',
@@ -65,16 +75,16 @@ class KTPByKabupatenController extends Controller
             'alamat'                => 'required|string',
             'rt'                    => 'required|string',
             'rw'                    => 'required|string',
-            'desa'                  => 'required|string',
-            'kecamatan'             => 'required|string',
             'status_perkawinan'     => 'required|string',
-            'keterangan'            => 'nullable|string',
+            'keterangan'            => 'required|string',
             'photo'                 => 'required',
         ], $this->customMessages);
 
         $data = new KTP();
-        $data->provinsi                 = strip_tags(request()->post('provinsi'));
-        $data->kabupaten                = auth()->user()->kabupaten;
+        $data->prov_id                 = 1;
+        $data->city_id                  = auth()->user()->city_id;
+        $data->dis_id                   = strip_tags(request()->post('kecamatan'));
+        $data->subdis_id                = strip_tags(request()->post('desa'));
         $data->nik                      = strip_tags(request()->post('nik'));
         $data->nama                     = strip_tags(request()->post('nama'));
         $data->tempat_lahir             = strip_tags(request()->post('tempat_lahir'));
@@ -83,8 +93,6 @@ class KTPByKabupatenController extends Controller
         $data->alamat                   = strip_tags(request()->post('alamat'));
         $data->rt                       = strip_tags(request()->post('rt'));
         $data->rw                       = strip_tags(request()->post('rw'));
-        $data->desa                     = strip_tags(request()->post('desa'));
-        $data->kecamatan                = strip_tags(request()->post('kecamatan'));
         $data->status_perkawinan        = strip_tags(request()->post('status_perkawinan'));
         $data->keterangan               = strip_tags(request()->post('keterangan'));
 
@@ -125,7 +133,12 @@ class KTPByKabupatenController extends Controller
     public function edit($id)
     {
         $data = KTP::findOrFail($id);
-        return view('admin.ktp-kabupaten.edit', compact('data'));
+        $city = auth()->user()->city_id;
+
+        $provinces = Province::orderBy('prov_name')->get();
+        $districts = District::orderBy('dis_name')->where('city_id', $city)->get();
+        $subdistricts = Subdistrict::orderBy('subdis_name')->get();
+        return view('admin.ktp-kabupaten.edit', compact('data', 'provinces', 'districts', 'subdistricts'));
     }
 
     /**
@@ -140,7 +153,8 @@ class KTPByKabupatenController extends Controller
         $data = KTP::findOrFail($id);
 
         request()->validate([
-            'provinsi'              => 'required|string',
+            'kecamatan'             => 'nullable',
+            'desa'                  => 'nullable',
             'nik'                   => 'required|integer|min:16',
             'nama'                  => 'required|string',
             'tempat_lahir'          => 'required|string',
@@ -149,15 +163,33 @@ class KTPByKabupatenController extends Controller
             'alamat'                => 'required|string',
             'rt'                    => 'required|string',
             'rw'                    => 'required|string',
-            'desa'                  => 'required|string',
-            'kecamatan'             => 'required|string',
             'status_perkawinan'     => 'required|string',
-            'keterangan'            => 'nullable|string',
+            'keterangan'            => 'required|string',
             'photo'                 => 'nullable',
         ], $this->customMessages);
 
-        $data->provinsi                 = strip_tags(request()->post('provinsi'));
-        $data->kabupaten                = auth()->user()->kabupaten;
+        if (request()->post('kabupaten') == '') {
+            $city                  = $data->city_id;
+        } else {
+            $city                  = strip_tags(request()->post('kabupaten'));
+        }
+
+        if (request()->post('kecamatan') == '') {
+            $district                  = $data->dis_id;
+        } else {
+            $district                  = strip_tags(request()->post('kecamatan'));
+        }
+
+        if (request()->post('desa') == '') {
+            $subdistrict                  = $data->subdis_id;
+        } else {
+            $subdistrict                  = strip_tags(request()->post('desa'));
+        }
+
+        $data->prov_id                  = 1;
+        $data->city_id                  = $city;
+        $data->dis_id                   = $district;
+        $data->subdis_id                = $subdistrict;
         $data->nik                      = strip_tags(request()->post('nik'));
         $data->nama                     = strip_tags(request()->post('nama'));
         $data->tempat_lahir             = strip_tags(request()->post('tempat_lahir'));
@@ -166,8 +198,6 @@ class KTPByKabupatenController extends Controller
         $data->alamat                   = strip_tags(request()->post('alamat'));
         $data->rt                       = strip_tags(request()->post('rt'));
         $data->rw                       = strip_tags(request()->post('rw'));
-        $data->desa                     = strip_tags(request()->post('desa'));
-        $data->kecamatan                = strip_tags(request()->post('kecamatan'));
         $data->status_perkawinan        = strip_tags(request()->post('status_perkawinan'));
         $data->keterangan               = strip_tags(request()->post('keterangan'));
 

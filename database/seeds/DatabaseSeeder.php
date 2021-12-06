@@ -14,6 +14,57 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        if (Schema::hasTable('provinces')) {
+            if (DB::table('provinces')->count() > 0) {
+                DB::table('provinces')->truncate();
+            }
+
+            DB::table('provinces')->insert([
+                [
+                    'prov_name' => 'Papua',
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+            ]);
+        }
+
+        if (Schema::hasTable('cities')) {
+            if (DB::table('cities')->count() > 0) {
+                DB::table('cities')->truncate();
+            }
+
+            DB::table('cities')->insert([
+                [
+                    'city_name' => 'Nabire',
+                    'prov_id'   => 1,
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'city_name' => 'Dogiyai',
+                    'prov_id'   => 1,
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'city_name' => 'Deiyai',
+                    'prov_id'   => 1,
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'city_name' => 'Paniai',
+                    'prov_id'   => 1,
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'city_name' => 'Intan Jaya',
+                    'prov_id'   => 1,
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'city_name' => 'Mimika',
+                    'prov_id'   => 1,
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+            ]);
+        }
         if (Schema::hasTable('roles')) {
             if (DB::table('roles')->count() > 0) {
                 DB::table('roles')->truncate();
@@ -41,40 +92,7 @@ class DatabaseSeeder extends Seeder
                     'password' => bcrypt('123'),
                     'profile_url' => 'admin.jpg',
                     'role_id' => 1,
-                    'kabupaten' => null,
-                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                ],
-            ]);
-        }
-
-        if (Schema::hasTable('kabupatens')) {
-            if (DB::table('kabupatens')->count() > 0) {
-                DB::table('kabupatens')->truncate();
-            }
-
-            DB::table('kabupatens')->insert([
-                [
-                    'name' => 'Nabire',
-                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                ],
-                [
-                    'name' => 'Dogiyai',
-                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                ],
-                [
-                    'name' => 'Deiyai',
-                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                ],
-                [
-                    'name' => 'Paniai',
-                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                ],
-                [
-                    'name' => 'Intan Jaya',
-                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                ],
-                [
-                    'name' => 'Mimika',
+                    'city_id' => 1,
                     'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 ],
             ]);
