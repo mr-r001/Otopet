@@ -1,316 +1,335 @@
-@extends('public.layouts.master')
-
-@section('title', 'Home')
-
-@section('css')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="{{ asset('frontend/bs/css/bootstrap.min.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/style/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/icons/css/all.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <title>Otopet website</title>
     <style>
-        body {
-            font-family: "Open Sans", sans-serif;
+      .fa-play {
+        position: absolute;
+        border-radius: 1000px;
+        background-color: #fff;
+        font-size: 40px;
+        width: 70px;
+        height: 70px;
+        left: 50%;
+        top: 40%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.3s;
+        animation: play 1.3s ease infinite;
+      }
+      @keyframes play {
+        0% {
+          transform: scale(1);
+          filter: brightness(100%);
         }
-        h2 {
-            color: #000;
-            font-size: 26px;
-            font-weight: 300;
-            text-align: center;
-            text-transform: uppercase;
-            position: relative;
-            margin: 30px 0 80px;
+        50% {
+          transform: scale(0.9) rotate(10deg);
+          filter: brightness(80%);
         }
-        h2 b {
-            color: #ffc000;
+        100% {
+          transform: scale(1);
+          filter: brightness(100%);
         }
-        h2::after {
-            content: "";
-            width: 100px;
-            position: absolute;
-            margin: 0 auto;
-            height: 4px;
-            background: rgba(0, 0, 0, 0.2);
-            left: 0;
-            right: 0;
-            bottom: -20px;
-        }
-        .carousel {
-            margin: 50px auto;
-            padding: 0 70px;
-        }
-        .carousel .carousel-item {
-            min-height: 330px;
-            text-align: center;
-            overflow: hidden;
-        }
-        .carousel .carousel-item .img-box {
-            height: 160px;
-            width: 100%;
-            position: relative;
-        }
-        .carousel .carousel-item img {
-            max-width: 100%;
-            max-height: 100%;
-            display: inline-block;
-            position: absolute;
-            bottom: 0;
-            margin: 0 auto;
-            left: 0;
-            right: 0;
-        }
-        .carousel .carousel-item h4 {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-        .carousel .carousel-item .btn {
-            color: #333;
-            border-radius: 0;
-            font-size: 11px;
-            text-transform: uppercase;
-            font-weight: bold;
-            background: none;
-            border: 1px solid #ccc;
-            padding: 5px 10px;
-            margin-top: 5px;
-            line-height: 16px;
-        }
-        .carousel .carousel-item .btn:hover, .carousel .carousel-item .btn:focus {
-            color: #fff;
-            background: #000;
-            border-color: #000;
-            box-shadow: none;
-        }
-        .carousel .carousel-item .btn i {
-            font-size: 14px;
-            font-weight: bold;
-            margin-left: 5px;
-        }
-        .carousel .thumb-wrapper {
-            text-align: center;
-        }
-        .carousel .thumb-content {
-            padding: 15px;
-        }
-        .carousel-control-prev, .carousel-control-next {
-            height: 100px;
-            width: 40px;
-            background: none;
-            margin: auto 0;
-            background: rgba(0, 0, 0, 0.2);
-        }
-        .carousel-control-prev i, .carousel-control-next i {
-            font-size: 30px;
-            position: absolute;
-            top: 50%;
-            display: inline-block;
-            margin: -16px 0 0 0;
-            z-index: 5;
-            left: 0;
-            right: 0;
-            color: rgba(0, 0, 0, 0.8);
-            text-shadow: none;
-            font-weight: bold;
-        }
-        .carousel-control-prev i {
-            margin-left: -3px;
-        }
-        .carousel-control-next i {
-            margin-right: -3px;
-        }
-        .carousel .item-price {
-            font-size: 13px;
-            padding: 2px 0;
-        }
-        .carousel .item-price strike {
-            color: #999;
-            margin-right: 5px;
-        }
-        .carousel .item-price span {
-            color: #86bd57;
-            font-size: 110%;
-        }
-        .carousel .carousel-indicators {
-            bottom: -50px;
-        }
-        .carousel-indicators li, .carousel-indicators li.active {
-            width: 10px;
-            height: 10px;
-            margin: 4px;
-            border-radius: 50%;
-            border-color: transparent;
-            border: none;
-        }
-        .carousel-indicators li {
-            background: rgba(0, 0, 0, 0.2);
-        }
-        .carousel-indicators li.active {
-            background: rgba(0, 0, 0, 0.6);
-        }
-        .star-rating li {
-            padding: 0;
-        }
-        .star-rating i {
-            font-size: 14px;
-            color: #ffc000;
-        }
+      }
+      .fa-play:hover {
+        transform: scale(0.94);
+        filter: brightness(88%);
+        transition: 0.3s;
+      }
     </style>
-@endsection
-
-@section('slider')
-    @include('public.layouts.slider1')
-@endsection
-
-@section('content')
-    @if(session('status'))
-    <div class="alert alert-primary alert-dismissible fade show" role="alert">
-        <strong>Success!</strong> {{ session('status') }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    @endif
-
-    @if(session('error'))
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        <strong>Error!</strong> {{ session('error') }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    @endif
-
-    @if(auth()->check() && auth()->user()->password_changed_at === null)
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Warning!</strong> For first time login, change your password now! Click
-        <a href="{{ route('public.changepassword') }}">
-            here
-        </a> to continue
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    @endif
-
-    @if(session('info'))
-    <div class="alert alert-info alert-dismissible fade show" role="alert">
-        <strong>Info!</strong> {{ session('info') }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    @endif
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Popular <b>Books</b></h2>
-                @if($popularBooks->isNotEmpty())
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
-
-                        <!-- Carousel indicators -->
-                        <ol class="carousel-indicators">
-                            @foreach($popularBooks as $popularBook)
-                                @if($loop->index == 0 || $loop->index % 4 == 0)
-                                    <li data-target="#myCarousel" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
-                                @endif
-                            @endforeach
-                        </ol>
-
-                        <!-- Wrapper for carousel items -->
-                        <div class="carousel-inner">
-                            @foreach($popularBooks as $popularBook)
-                                @if($loop->index == 0 || $loop->index % 4 == 0)
-                                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                <div class="row">
-                                @endif
-                                    <div class="col">
-                                        <div class="thumb-wrapper">
-                                            <div class="img-box">
-                                                <img src="{{ asset('/img/books/' . $popularBook->book_cover_url) }}" class="img-fluid" alt="">
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h4>{{ $popularBook->title }}</h4>
-                                                <p class="item-price">{{ $popularBook->category_id ? $popularBook->category->name : '' }}</p>
-
-                                                <a href="{{ route('public.bookDetail', $popularBook->id) }}" class="btn btn-primary">View Book</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @if(($loop->index > 0 && $loop->index % 4 == 3) || $loop->last)
-                                </div>
-                                </div>
-                                @endif
-                            @endforeach
-                        </div>
-
-                        <!-- Carousel controls -->
-                        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-                            <i class="fa fa-angle-left"></i>
-                        </a>
-                        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                    </div>
-                @else
-                    <h3 class="text-center">No Book</h3>
-                @endif
-            </div>
+</head>
+<body>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="{{ asset('frontend/assets/img/navbar-logo.png') }}" alt=""> Otopet</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav" style="margin-left: auto;">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#profile">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#aspirasi">Aspirasi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#filosofi">Filosofi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#kegiatan">Kegiatan</a>
+              </li>
+              <li class="nav-item login">
+                <a class="nav-link" href="{{ route('adminLogin') }}" style="color: white;">Login</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </div>
+      </nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Latest <b>Books</b></h2>
-                @if($latestBooks->isNotEmpty())
-                    <div id="myCarousel2" class="carousel slide" data-ride="carousel" data-interval="0">
-
-                        <!-- Carousel indicators -->
-                        <ol class="carousel-indicators">
-                            @foreach($latestBooks as $latestBook)
-                                @if($loop->index == 0 || $loop->index % 4 == 0)
-                                    <li data-target="#myCarousel2" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></li>
-                                @endif
-                            @endforeach
-                        </ol>
-
-                        <!-- Wrapper for carousel items -->
-                        <div class="carousel-inner">
-                            @foreach($latestBooks as $latestBook)
-                                @if($loop->index == 0 || $loop->index % 4 == 0)
-                                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                <div class="row">
-                                @endif
-                                    <div class="col">
-                                        <div class="thumb-wrapper">
-                                            <div class="img-box">
-                                                <img src="{{ asset('/img/books/' . $latestBook->book_cover_url) }}" class="img-fluid" alt="">
-                                            </div>
-                                            <div class="thumb-content">
-                                                <h4>{{ $latestBook->title }}</h4>
-                                                <p class="item-price">{{ $latestBook->category_id ? $latestBook->category->name : '' }}</p>
-
-                                                <a href="{{ route('public.bookDetail', $latestBook->id) }}" class="btn btn-primary">View Book</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @if(($loop->index > 0 && $loop->index % 4 == 3) || $loop->last)
-                                </div>
-                                </div>
-                                @endif
-                            @endforeach
-                        </div>
-
-                        <!-- Carousel controls -->
-                        <a class="carousel-control-prev" href="#myCarousel2" data-slide="prev">
-                            <i class="fa fa-angle-left"></i>
-                        </a>
-                        <a class="carousel-control-next" href="#myCarousel2" data-slide="next">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                    </div>
-                    <br>
-                @else
-                    <h3 class="text-center">No Book</h3>
-                    <br>
-                @endif
-            </div>
+      <section class="heroes">
+        <div class="hero-left">
+          <h1>Otopianus Petrus Tebai</h1>
+          <p>Anggota DPD RI terpilih mewakili daerah pemilihan Papua pada Pemilu 2019</p>
+          <a href="#profile"><button class="btn-danger btn-dangers">Selengkapnya</button></a>
         </div>
-    </div>
-@endsection
+        <div class="hero-right">
+          <!-- <i class="fas fa-play"></i> -->
+          <video controls="false" class="video" autoplay="true">
+            <source src="{{ asset('frontend/assets/video/alam.mp4') }}" type="video/mp4" />
+          </video>
+        </div>
+      </section>
+
+      <section class="aspirasi" id="profile">        
+        <div class="aspirasi-left">
+          <div class="content-aspirasi">
+            <h3>Otopianus Petrus Tebai</h3>
+            <p>
+              Otopianus P. Tebai, (lahir di Modio, Dogiyai, Papua, 05 Oktober 1991; umur 29 tahun), adalah 
+              anggota DPD RI terpilih mewakili daerah pemilihan Papua pada Pemilu 2019. Sebelum terpilih sebagai 
+              anggota MPR RI/[1]DPD RI, Otopianus adalah seorang tokoh pemuda papua yang pekerja keras Mulai dari 
+              menjadi Pengojek Hingga Terakhir tenaga honorer hingga dilantik menjadi Senator Papua.
+  
+              Nama lengkap pria kelahiran Modio, Dogiyai, Papua, tanggal 5 Oktober 1991 ini adalah Otopianus Petrus Tebai.
+              Ia akrab disapa ‘Otopet’. Pria yang menikah dengan Editha Tekege dan memiliki 7 orang anak ini 
+              (Jakson Paulus Gaibii Tebai, Rosalina Tebai, Maya Tebai (Alm) Sonny Habel Tebai, Rafael Wadibi Tebai 
+              ( Alm) Clarita Tebai, Daud Kobehawi Tebai dan Maria Tebai), lahir dari pasangan Leonard Tebai, S.Sos, 
+              M.Kes (seorang mantri) dan Maria Kedeikoto, Amd. Kep, S.Kep (seorang perawat), pasangan asli Papua, yang 
+              menjalani hidup dan kehidupan di Tanah Papua, dengan sederhana. Sejak kecil, Otopet memiliki sejuta mimpi. 
+              Salah satu mimpinya adalah ia ingin mengubah Papua dan kehidupan masyarakat di sana menjadi lebih baik
+            </p>
+            <a href={{ route('profile') }}><button class="btn-danger btn-dangers">Selengkapnya</button></a>
+          </div>
+        </div>
+        <div class="aspirasi-right" id="aspirasi">
+            <form>
+              <img src="{{ asset('frontend/assets/img/hero-logo.png') }}" alt="">
+              <p class="pp">Salurkan Aspirasi Anda</p>
+              <hr>          
+              <div class="wrap-form">
+                <div class="wrap-form-left"> 
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label lbl2">Nama</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label lbl1">Masukkan Aspirasi Anda</label>
+                    <textarea class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"></textarea>
+                  </div>
+                  <button type="button" class="btn-aspirasix" id="btn-submit">Kirim sekarang</button>
+                </div>
+                <div class="wrap-form-right">
+                  <div class="sosmed">
+                    <a href="https://facebook.com/otopianusp.tebai">
+                      <img src="{{ asset('frontend/assets/icons/facebook.png') }}" alt="">
+                      <h4>Facebook</h4>
+                    </a>
+                  </div>
+                  <div class="sosmed">
+                    <a href="https://twitter.com/otopianusp.tebai">
+                      <img src="{{ asset('frontend/assets/icons/twitter.png') }}" alt="">
+                      <h4>Facebook</h4>
+                    </a>
+                  </div>
+                  <div class="sosmed">
+                    <a href="gmail.com">
+                      <img src="{{ asset('frontend/assets/icons/gmail.png') }}" alt="">
+                      <h4>otopianusp.tebai@gmail.com</h4>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+      </section>
+
+      <section class="filosofi" id="filosofi">
+        <div class="wrap-fls">
+          <div class="fls">
+            <img src="{{ asset('frontend/assets/img/search.png') }}" alt="fls">
+            <p>
+              DOU adalah Bahasa Suku Mee-Papua yang artinya "MELIHAT", dimana Para Penasehat Tokoh Tua Suku Mee 
+              Biasa Menasehati agar ANAK MUDA tidak salah jalan dalam menjalankan kehidupan sehari-hari dan kehidupan 
+              selanjutnya serta Takut akan Tuhan harus Nomor Satu.
+            </p>
+            <div class="arrow" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <i class="fas fa-angle-right"></i>
+            </div>
+          </div>
+          <div class="fls">
+            <img src="{{ asset('frontend/assets/img/artificial-intelligence.png') }}" alt="fls">
+            <p>
+              GAI adalah Bahasa Suku Mee-Papua yang artinya "BERPIKIR", dimana Para Penasehat Tokoh Tua Suku Mee
+              Biasa Menasehati agar ANAK MUDA tidak salah mengerjakan pekerjaan yang seharus dikerjakan. Sehingga 
+              harus dikerjakan sesuai dengan Kebutuhan dan Pokok yang dibutuhkan didalam...
+            </p>
+            <div class="arrow" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+              <i class="fas fa-angle-right"></i>
+            </div>
+          </div>
+          <div class="fls">
+            <img src="{{ asset('frontend/assets/img/accelerate.png') }}" alt="fls">
+            <p>
+              EKOWAI adalah Bahasa Suku Mee-Papua yang artinya "BEKERJA", dimana Para Penasehat Tokoh Tua Suku Mee 
+              Biasa Menasehati agar ANAK MUDA Kalu tidak bekerja tidak makan, untuk hari ini dan untuk hari esok, maka 
+              bekerjalah untuk hidup, membantu orang lain yang sedang bekerja...
+            </p>
+            <div class="arrow" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+              <i class="fas fa-angle-right"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+	  
+	 	<section class="artikel" id="kegiatan">
+			<h2>Info Kegiatan Kami</h2>
+			<p class="p">
+				Cari tahu yang kami lakukan untuk masyarakat dalam membangun negeri
+        	</p>
+          	<div class="wrap-artikel">
+            	@foreach ($events as $event )
+            	<div class="card">
+              		<a href={{ route('detail', $event->slug) }}>
+                		<div class="card-img">
+                  			<img src="{{ asset("img/article/$event->thumbnail") }}" alt="img">
+                		</div>
+                		<div class="card-content">
+                  			<p>{{ $event->title }}</p>
+                  			<span>{{ date('d M Y', strtotime($event->created_at)) }}</span>
+                		</div>
+              		</a>
+            	</div>
+            	@endforeach
+          	</div>
+          	<a href={{ route('events') }} class="ffd"><button class="btn-danger btn-dangers2">Selengkapnya</button></a>
+      	</section>
+
+      <footer>
+        <small>&copy;Copyright by Otopet</small>
+      </footer>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">DOU - Melihat</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p style="line-height: 2em;">
+                DOU adalah Bahasa Suku Mee-Papua yang artinya "MELIHAT", dimana Para Penasehat Tokoh Tua Suku Mee Biasa 
+                Menasehati agar ANAK MUDA tidak salah jalan dalam menjalankan kehidupan sehari-hari dan kehidupan selanjutnya 
+                serta Takut akan Tuhan harus Nomor Satu. (DAA, OMA TENAI, MOGAI TETAI,PUYA MANA TEWEGAI, OWA DAA DLL, merujuk 
+                pada 10 Perintah ALLAH. Melihat/Menanggapi pada letak Pokok Persolannya.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">GAI - Berpikir</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p style="line-height: 2em;">
+                GAI adalah Bahasa Suku Mee-Papua yang artinya "BERPIKIR", dimana Para Penasehat Tokoh Tua Suku Mee 
+                Biasa Menasehati agar ANAK MUDA tidak salah mengerjakan pekerjaan yang seharus dikerjakan. Sehingga
+                harus dikerjakan sesuai dengan Kebutuhan dan Pokok yang dibutuhkan didalam menjalan kehidupan sehari-hari 
+                dan atau dimasa depan. Pemberitahuan hal-hal pokok dasar hidup agar ANAK MUDA tidak salah menganalisa/berpikir.
+                menindaklanjut berbagai persolan yang kita hadapi.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">EKOWAI - Bekerja</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p style="line-height: 2em;">
+                EKOWAI adalah Bahasa Suku Mee-Papua yang artinya "BEKERJA", dimana Para Penasehat Tokoh Tua Suku Mee Biasa 
+                Menasehati agar ANAK MUDA Kalu tidak bekerja tidak makan, untuk hari ini dan untuk hari esok, maka bekerjalah 
+                untuk hidup, membantu orang lain yang sedang bekerja, mengerjakan agar berkehidupan pada keadilan dan kesejahteran
+                bagi semua orang. 
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        document.querySelector('.video').addEventListener('click', () => {
+          document.querySelector('.fa-play').style.transition = '1s';
+          document.querySelector('.fa-play').style.opacity = 0;
+        })
+      </script>
+      <script src="{{ asset('backend/modules/jquery.min.js') }}"></script>
+      <script src="{{ asset('frontend/bs/js/bootstrap.min.js') }}"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+      <script>
+        $(document).ready(function() {
+          $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+          });
+          $('#btn-submit').click(function() {
+            var formData = {
+              name:$('#exampleInputPassword1').val(),
+              message :$('#exampleInputEmail1').val()
+            };
+            var ajaxurl = '{{ route('sendMessage') }}';
+            $.ajax({
+              type: "POST",
+              url: ajaxurl,
+              data: formData,
+              dataType: 'json',
+              success: function(data) {
+                  console.log(data)
+                  if (data.code == 200) {
+                    toastr.success('Pesan terkirim!')
+                  }
+              },
+              error: function(data) {
+                  console.log(data)
+              }
+            });
+          });
+        })
+      </script>
+</body>
+</html>

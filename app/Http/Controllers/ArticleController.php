@@ -55,11 +55,13 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
+
         request()->validate([
             'title' => 'required|string|max:45',
             'content' => 'required|string',
             'thumbnail' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ], $this->customMessages);
+
 
         $item = new Article();
         $item->title = strip_tags(request()->post('title'));

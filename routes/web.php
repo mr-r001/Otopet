@@ -16,7 +16,16 @@ use Barryvdh\DomPDF\Facade as PDF;
 */
 
 Auth::routes();
-Route::get('/', 'Auth\LoginController@adminLogin')->name('adminLogin');
+
+//Public 
+Route::get('/', 'PublicController@index');
+Route::get('/auth', 'Auth\LoginController@adminLogin')->name('adminLogin');
+Route::get('/profile', 'PublicController@profile')->name('profile');
+
+Route::get('/events', 'PublicController@events')->name('events');
+Route::get('/event/{slug}', 'PublicController@detail')->name('detail');
+
+Route::post('/send-message', 'PublicController@sendMessage')->name('sendMessage');
 
 // ROUTE FOR ADMIN ONLY
 Route::name('admin.')->prefix('admin')->middleware(['auth', 'admin', 'active', 'check.session'])->group(function () {
