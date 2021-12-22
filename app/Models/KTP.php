@@ -23,4 +23,21 @@ class KTP extends Model
         'keterangan',
         'photo',
     ];
+
+    public function getProvince()
+    {
+        return $this->belongsTo(Province::class, 'prov_id');
+    }
+    public function getCity()
+    {
+        return $this->belongsTo(City::class, 'city_id');
+    }
+    public function getDistrict()
+    {
+        return $this->belongsTo(District::class, 'dis_id');
+    }
+    public function getSubdistrict()
+    {
+        return $this->belongsTo(Subdistrict::class, 'subdis_id');
+    }
 }

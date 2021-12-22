@@ -20,32 +20,33 @@
         <h1 class="title">SURAT PERNYATAAN DUKUNGAN PASANGAN CALON PERSEORANGAN DALAM PEMILIHAN GUBERNUR DAN WAKIL GUBERNUR</h1>
         <div class="alamat">
             <div class="alamat2">
-                <div>Kelurahan/Desa :</div>
-                <div>Kecamatan      : </div>
+                <div>Kelurahan/Desa : {{ $ktp->getSubdistrict ? $ktp->getSubdistrict->subdis_name : '' }}</div>
+                <div>Kecamatan      : {{ $ktp->getDistrict ? $ktp->getDistrict->dis_name : '' }}</div>
             </div>
             <div class="alamat2">
-                <div>Kabupaten :</div>
-                <div>Provinsi  : <span style="font-weight: bold;margin-left: 10px;">PAPUA</span></div>
+                <div>Kabupaten : {{ $ktp->getCity ? $ktp->getCity->city_name : '' }}</div>
+                <div>Provinsi  : <span style="font-weight: bold;margin-left: 10px;">{{ $ktp->getProvince ? $ktp->getProvince->prov_name : '' }}</span></div>
             </div>
         </div>
         <br>
         <br>
         <div class="content-biodata">
         <p>Yang bertanda tangan di bawah ini, saya</p><br>
-        <div><p>1. Nama <span class="titik2">:</span> <span class="content22">OTOPIANUS P. TEBAI</span></p></div>
-        <div><p>2. NIK <span class="titik2">:</span> <span class="content22">9104010510910010</span></p></div>
-        <div><p>3. Alamat <span class="titik2">:</span> <span class="content22">Jl. Pipit </span></p></div>
-        <div><p>4. RT/RW <span class="titik2">:</span> <span class="content22">003/001</span></p></div>
-        <div><p>5. Tempat Lahir <span class="titik2">:</span> <span class="content22">MODIO</span></p></div>
-        <div><p>6. Tanggal Lahir <span class="titik2">:</span> <span class="content22">05-10-1991</span></p></div>
-        <div><p>7. Status Perkawinan <span class="titik2">:</span> <span class="content22">Sudah Kawin</span></p></div>
+        <div><p>1. Nama <span class="titik2">:</span> <span class="content22">{{ $ktp->nama }}</span></p></div>
+        <div><p>2. NIK <span class="titik2">:</span> <span class="content22">{{ $ktp->nik }}</span></p></div>
+        <div><p>3. Alamat <span class="titik2">:</span> <span class="content22">{{ $ktp->alamat }} </span></p></div>
+        <div><p>4. RT/RW <span class="titik2">:</span> <span class="content22">{{ $ktp->rt}}/{{$ktp->rw}}</span></p></div>
+        <div><p>5. Tempat Lahir <span class="titik2">:</span> <span class="content22">{{ $ktp->tempat_lahir }}</span></p></div>
+        <div><p>6. Tanggal Lahir <span class="titik2">:</span> <span class="content22">{{ $ktp->tanggal_lahir }}</span></p></div>
+        <div><p>7. Status Perkawinan <span class="titik2">:</span> <span class="content22">{{ $ktp->status_perkawinan }}</span></p></div>
         <br>
         <p>Dengan ini Menyatakan dengan sebenarnya dan secara sukarela mendukung Pasangan Calon Perseorangan dalm Pemilihan Gubernur dan Wakil Gubernur Tahun 2023, atas nama :</p>
         <br>
-        <p>1. Calon Gubernur : <Span style="font-weight: bold;">OTOPIANUS P. TEBAI</Span></p>
+        <p>1. Calon Gubernur : <Span style="font-weight: bold;">{{ Request::get('name') }}</Span></p>
         <br>
         <p>Calon Wakil gubernur/Wakil Bupati/Wakil WaliKota :</p>
         <br>
+        <p>{{ Request::get('wakil') }}</p>
         <p>........................................................................................................................................................................................................................................</p>    
         <br>
         <p>Sebagai bukti dukungan Pasangan Calon Perseorangan, dalam surat Pernyataan dukungan ini saya lampirkan Fotokopi Kartu Tanda Penduduk Elektronik.</p>
@@ -62,7 +63,7 @@
 <br>
 <div class="ttd">
     <p>Papua............................................2023 <br> Yang Membuat Pernyataan,</p>
-    <span style="font-weight: bold;position: relative;top: 100px;">(OTOPIANUS P. TEBAI)</span>
+    <span style="font-weight: bold;position: relative;top: 100px;">({{ $ktp->nama }})</span>
 </div>
 <br>
 <br>
