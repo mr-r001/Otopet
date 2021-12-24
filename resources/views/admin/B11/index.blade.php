@@ -108,3 +108,58 @@
         </section>
     </div>
 @endsection
+
+@section('js')
+    <script src="{{ asset('backend/js/jquery.mask.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            // Setup AJAX CSRF
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $('body').on('change', '#kabupaten', function() {
+                var id = $(this).val();
+                ajaxurl = '{{ route("admin.kecamatan.search", "id") }}'
+                $.ajax({
+                    type: 'GET',
+                    url: ajaxurl,
+                    data: {
+                        id: id,
+                    },
+                    success: function(data) {
+                        $.each(data, function (i,data) {
+                            $('#kecamatan').append(new Option(data.dis_name, data.id))
+                        })
+                    },
+                    error: function(data) {
+                        console.log(data)
+                    }
+                });
+            })
+            $('body').on('change', '#kecamatan', function() {
+                var id = $(this).val();
+                ajaxurl = '{{ route("admin.desa.search", "id") }}'
+                $.ajax({
+                    type: 'GET',
+                    url: ajaxurl,
+                    data: {
+                        id: id,
+                    },
+                    success: function(data) {
+                        $.each(data, function (i, data) {
+                            $('#desa').append(new Option(data.subdis_name, data.id))
+                        })
+                    },
+                    error: function(data) {
+                        console.log(data)
+                    }
+                });
+            })
+            $('form').submit(function() {
+                $('#btn-submit').html('<i class="fas fa-cog fa-spin"></i> Saving...').attr("disabled", true);
+            });
+        })
+    </script>
+@endsection

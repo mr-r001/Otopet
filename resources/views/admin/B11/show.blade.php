@@ -20,8 +20,8 @@
         <p>Nama Bakal Calon Gubernur : <span style="font-weight: bold;">{{ Request::get('name') }}</span></p>
         <p>Nama Bakal Calon Wakil Gubernur : <span style="font-weight: bold;">{{ Request::get('wakil') }}</span></p>
         <p class="menyatakan">Menyatakan daftar nama pendukung Bakal Pasangan Calon Persorangan dalam Pemilihan Gubernur dan Wakil Gubernur</p>
-        <p>Provinsi <span class="titik">:</span> <span style="font-weight: bold;position: absolute;left: 27vw">PAPUA</span></p>
-        <p>Kabupaten/Kota <span class="titik">:</span> </p>
+        <p>Provinsi <span class="titik">:</span> <span style="font-weight: bold;position: absolute;left: 27vw">PAPUA </span></p>
+        <p>Kabupaten/Kota <span class="titik">: </span></p>
         <p>Kecamatan <span class="titik">:</span> </p>
         <p>Kelurahan/Desa <span class="titik">:</span> </p>
         <p>Sebagai berikut <span class="titik">:</span></p>
