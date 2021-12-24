@@ -29,6 +29,9 @@ class B11 extends Controller
             'ktp' => KTP::with(['getProvince', 'getCity', 'getDistrict', 'getSubdistrict'])->get(),
             'province' => Province::all()
         ];
+
+        // Pilih Provinsi sampai Desa, Show Pendukung dalam desa yg di pilih
+        // Tanggal Otomatis hari ini
         return view('admin.B11.show')->with($params);
     }
 }

@@ -20,6 +20,8 @@ class B1 extends Controller
         $ktp = KTP::with(['getProvince', 'getCity', 'getDistrict', 'getSubdistrict'])->where('id', $request->ktp_id)->first();
         if ($ktp == null) return redirect()->back()->with('alert-faield', 'Data ktp tidak ditemukan');
 
+        // Tanggal otomatis hari ini
+
         $params = [
             'ktp' => $ktp
         ];

@@ -21,7 +21,7 @@
         <br>
         <br>
         <p>Menyatakan :</p>
-        <p>1. Mendaftarkan diri sebagai Bakal Pasangan Calon Gubernur dan Wakil Gubernur Porvinsi Papua Tahun 2024 dengan jumlah pendukung 319.000 orang (8.9%) dari jumlah pemilih, yang tersebar di 15 kabupaten (50%) Kabupaten dan telah memnuhi ketentuan jumlah dukungan dan sebaran sesuai ketentuan peraturan perundang-undangan yang berlaku.</p>
+        <p>1. Mendaftarkan diri sebagai Bakal Pasangan Calon Gubernur dan Wakil Gubernur Provinsi Papua Tahun 2024 dengan jumlah pendukung 319.000 orang (7.5%) dari jumlah pemilih, yang tersebar di 6 kabupaten (50%) Kabupaten dan telah memnuhi ketentuan jumlah dukungan dan sebaran sesuai ketentuan peraturan perundang-undangan yang berlaku.</p>
         <p>2. Bahwa naskah visi, misi dan program yang kami susun, telah sesuai dengan Rencana Pembangunan Jangka Panjang (RPJP) Daerah.</p>
         <p>Surat pencalonan ini sebagai bukti pemenuhan syarat pengajuan Bakal Pasangan Calon Gubernur dan Wakil Gubernur/Bupati dan Wakil Bupati/Wali kota dan Wakil Wali Kota, dan dilampiri dokumen lainnya sesuai ketentuan peraturan perundang-undangan yang</p>
         <p>Demikian Surat Pencalonan ini dibuat dengan sebenarnya untuk digunakan sebagaimana mestinya.</p>
@@ -35,12 +35,7 @@
                 <h4 style="font-size: 16px;">OTOPIANUS P.TEBAI</h4>
             </div>
             <div>
-                <div class="box">
-                    <p>materai <br> 600</p>
-                </div>
-            </div>
-            <div>
-                <p>Papua, Maret 2024</p>
+                <p>Papua Tengah, Maret 2024</p>
                 <br>
                 <br>
                 <br>

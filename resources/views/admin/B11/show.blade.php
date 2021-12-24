@@ -36,7 +36,6 @@
                 <th scope="col">Alamat</th>
                 <th scope="col">RT</th>
                 <th scope="col">RW</th>
-                <th scope="col">RW</th>
                 <th scope="col">Tmp Lahir</th>
                 <th scope="col">Tgl Lahir</th>
                 <th scope="col">Pekerjaan</th>
@@ -45,15 +44,17 @@
               </tr>
             </thead>
             <tbody>
+              @php
+                $no = 1
+              @endphp
               @foreach ($ktp as $value)
                 <tr>
-                  <th scope="row">{{ $value->id }}</th>
+                  <th scope="row">{{ $no++ }}</th>
                   <td>{{ $value->nama }}</td>
                   <td>{{ $value->nik }}</td>
                   <td>{{ $value->jenis_kelamin }}</td>
                   <td>{{ $value->alamat }}</td>
                   <td>{{ $value->rt }}</td>
-                  <td>{{ $value->rw }}</td>
                   <td>{{ $value->rw }}</td>
                   <td>{{ $value->tempat_lahir }}</td>
                   <td>{{ $value->tanggal_lahir }}</td>
@@ -78,13 +79,8 @@
                 <br>
                 <h4 style="font-size: 18px;">{{ Request::get('name') }}</h4>
             </div>
-            <div>
-                <div class="box">
-                    <p>materai <br> 600</p>
-                </div>
-            </div>
             <div class="llr">
-                <p>Papua, Maret 2024</p>
+                <p>Papua Tengah, Maret 2024</p>
                 <br>
                 <br>
                 <br>

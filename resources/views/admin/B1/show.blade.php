@@ -9,11 +9,16 @@
     <title>model B.1-KWK</title>
     <link rel="stylesheet" href="{{ asset('backend/pdf/style.css') }}">
     <title>Document</title>
+    <style>
+        .ktp{
+            width: 9cm;
+        }
+    </style>
 </head>
 <body>
     <section class="header">
         <div class="box2">
-            <p>"KTP pendukung tempel disini"</p>
+            <img src="{{ asset('img/ktp/')."/". $ktp->photo }}" alt="ktp" class="ktp">
         </div>
     </section>
     <section class="hero">
