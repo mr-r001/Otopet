@@ -67,7 +67,7 @@
 <br>
 <br>
 <div class="ttd">
-    <p>Papua............................................2023 <br> Yang Membuat Pernyataan,</p>
+    <p>Papua Tengah, {{ $date }} <br> Yang Membuat Pernyataan,</p>
     <span style="font-weight: bold;position: relative;top: 100px;">({{ $ktp->nama }})</span>
 </div>
 <br>
