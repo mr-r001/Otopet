@@ -24,7 +24,7 @@
             <div class="section-body">
                 <div class="card card-primary">  
                     <div class="card-body">
-                        <form action="{{ route('admin.B11.show', 1) }}" method="GET">
+                        <form action="{{ route('admin.B2.show', 1) }}" method="GET">
                             @csrf
                             <div class="row">
                                 <div class="col-md-6 col-sm-6">

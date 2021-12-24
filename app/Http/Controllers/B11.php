@@ -25,15 +25,16 @@ class B11 extends Controller
 
     public function show($id)
     {
+
+        $data = KTP::with(['getProvince', 'getCity', 'getDistrict', 'getSubdistrict'])->where('subdis_id', request()->post('desa'))->get();
+
+        $today = date('d F Y');
+
         $params = [
-            'ktp' => KTP::with(['getProvince', 'getCity', 'getDistrict', 'getSubdistrict'])->where('subdis_id', request()->post('desa'))->get(),
-            'province' => Province::all()
+            'ktp' => $data,
+            'date' => $today
         ];
 
-        // Pilih Provinsi sampai Desa, Show Pendukung dalam desa yg di pilih
-        // Tanggal Otomatis hari ini
-
-        // Tinggal Tampilan di Show.blade
         return view('admin.B11.show')->with($params);
     }
 }

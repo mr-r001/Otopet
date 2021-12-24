@@ -21,9 +21,9 @@
         <p>Nama Bakal Calon Wakil Gubernur : <span style="font-weight: bold;">{{ Request::get('wakil') }}</span></p>
         <p class="menyatakan">Menyatakan daftar nama pendukung Bakal Pasangan Calon Persorangan dalam Pemilihan Gubernur dan Wakil Gubernur</p>
         <p>Provinsi <span class="titik">:</span> <span style="font-weight: bold;position: absolute;left: 27vw">PAPUA </span></p>
-        <p>Kabupaten/Kota <span class="titik">: </span></p>
-        <p>Kecamatan <span class="titik">:</span> </p>
-        <p>Kelurahan/Desa <span class="titik">:</span> </p>
+        <p>Kabupaten/Kota <span class="titik">: {{ $ktp[0]->getCity->city_name }} </span></p>
+        <p>Kecamatan <span class="titik">: {{ $ktp[0]->getDistrict->dis_name }}</span> </p>
+        <p>Kelurahan/Desa <span class="titik">: {{ $ktp[0]->getSubdistrict->subdis_name }}</span> </p>
         <p>Sebagai berikut <span class="titik">:</span></p>
         <br>
         <table class="table tbl2">
@@ -80,7 +80,7 @@
                 <h4 style="font-size: 18px;">{{ Request::get('name') }}</h4>
             </div>
             <div class="llr">
-                <p>Papua Tengah, Maret 2024</p>
+                <p>Papua Tengah, {{ $date }}</p>
                 <br>
                 <br>
                 <br>

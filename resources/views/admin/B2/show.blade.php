@@ -17,8 +17,8 @@
         <div class="wrap-content">
             <p>Rekapitulasi jumlah dukungan bakal pasangan calon perseorangan pemilihan Gunernur dan Wakil Gubernur Provinsi Papua Tahun 2024, atas nama : </p>
             <br>
-            <p>1. Nama Bakal Calon Gubernur <span>:</span> <span style="font-weight: bold;">OTOPIANUS P. TEBAI</span></p>
-            <p>2. Nama Bakal Calon Wakil Gubernur <span>:</span></p>
+            <p>1. Nama Bakal Calon Gubernur <span>:</span> <span style="font-weight: bold;">{{ Request::get('name') }}</span></p>
+            <p>2. Nama Bakal Calon Wakil Gubernur <span>: {{ Request::get('wakil') }}</span></p>
             <p>Dengan rincian data sebagai berikut :</p>
             <p>Tabel RincianJumalh Pendukung Bakal Pasangan Calon Perseorangan</p>
             <table class="table tg">
@@ -43,7 +43,7 @@
             </table>
             <p class="berdasarkan">Berdasarkan tabel tersebut, jumlah dukungan bakal pasangan calon perseorangan adalah :</p>
             <p>a. Jumlah dukungan  <span>:</span> 1000 pendukung</p>
-            <p>b. Jumlah sebaran <span>:</span> 7 kabupaten/kecamatan*)</p>
+            <p>b. Jumlah sebaran <span>:</span> 6 kabupaten/kecamatan*)</p>
             <div class="footer">
                 <div>
                     <p>Bakal Calon Gubernur</p>
@@ -55,12 +55,7 @@
                     <h4>OTOPIANUS P.TEBAI</h4>
                 </div>
                 <div>
-                    <div class="box">
-                        <p>materai <br> 600</p>
-                    </div>
-                </div>
-                <div>
-                    <p>Papua, Maret 2024</p>
+                    <p>Papua Tengah, {{ $date }}</p>
                     <br>
                     <br>
                     <br>
