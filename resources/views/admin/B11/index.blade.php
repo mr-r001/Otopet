@@ -45,7 +45,56 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12 col-sm-12">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="provinsi">Provinsi<sup class="text-danger">*</sup></label>
+                                        <select class="form-control form-control-sm @error('provinsi') is-invalid @enderror" name="provinsi" id="provinsi" disabled>
+                                            @foreach ($provinces as $province)
+                                                <option value="{{ $province->prov_id }}">{{ $province->prov_name }}</option>
+                                            @endforeach
+                                        </select>
+                                        <div class="invalid-feedback" id="valid-kabupaten">{{ $errors->first('kabupaten') }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="kabupaten">Kabupaten<sup class="text-danger">*</sup></label>
+                                        <select class="form-control form-control-sm @error('kabupaten') is-invalid @enderror" name="kabupaten" id="kabupaten">
+                                            <option value="" selected disabled>-- Pilih Kabupaten --</option>
+                                                @foreach ($cities as $city)
+                                                    <option value="{{ $city->id }}" {{ old('kabupaten') == $city->city_name ? 'selected' : '' }}>{{ $city->city_name }}</option>
+                                                @endforeach
+                                        </select>
+                                        <div class="invalid-feedback" id="valid-kabupaten">{{ $errors->first('kabupaten') }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="kecamatan">Kecamatan<sup class="text-danger">*</sup></label>
+                                        <select class="form-control form-control-sm @error('kecamatan') is-invalid @enderror" name="kecamatan" id="kecamatan">
+                                            <option value="" selected disabled>-- Pilih Kecamatan --</option>
+                                        </select>
+                                        <div class="invalid-feedback" id="valid-kecamatan">{{ $errors->first('kecamatan') }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="desa">Desa/Kelurahan<sup class="text-danger">*</sup></label>
+                                        <select class="form-control form-control-sm @error('desa') is-invalid @enderror" name="desa" id="desa">
+                                            <option value="" selected disabled>-- Pilih Desa/Kelurahan --</option>
+                                        </select>
+                                        <div class="invalid-feedback" id="valid-desa">{{ $errors->first('desa') }}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
                                     <button type="submit" class="btn btn-primary btn-round" id="btn-submit">
                                         <i class="fas fa-check"></i>
                                         Download 
