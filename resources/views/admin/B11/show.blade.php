@@ -17,8 +17,8 @@
         <p>
             Bersama ini kami, atas nama Bakal Pasangan Calon Peseorangan:
         </p>
-        <p>Nama Bakal Calon Gubernur : <span style="font-weight: bold;">OTOPIANUS P TEBAI</span></p>
-        <p>Nama Bakal Calon Wakil Gubernur : </p>
+        <p>Nama Bakal Calon Gubernur : <span style="font-weight: bold;">{{ Request::get('name') }}</span></p>
+        <p>Nama Bakal Calon Wakil Gubernur : <span style="font-weight: bold;">{{ Request::get('wakil') }}</span></p>
         <p class="menyatakan">Menyatakan daftar nama pendukung Bakal Pasangan Calon Persorangan dalam Pemilihan Gubernur dan Wakil Gubernur</p>
         <p>Provinsi <span class="titik">:</span> <span style="font-weight: bold;position: absolute;left: 27vw">PAPUA</span></p>
         <p>Kabupaten/Kota <span class="titik">:</span> </p>
@@ -45,51 +45,23 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
+              @foreach ($ktp as $value)
+                <tr>
+                  <th scope="row">{{ $value->id }}</th>
+                  <td>{{ $value->nama }}</td>
+                  <td>{{ $value->nik }}</td>
+                  <td>{{ $value->jenis_kelamin }}</td>
+                  <td>{{ $value->alamat }}</td>
+                  <td>{{ $value->rt }}</td>
+                  <td>{{ $value->rw }}</td>
+                  <td>{{ $value->rw }}</td>
+                  <td>{{ $value->tempat_lahir }}</td>
+                  <td>{{ $value->tanggal_lahir }}</td>
+                  <td>{{ $value->keterangan }}</td>
+                  <td>{{ $value->status_perkawinan }}</td>
+                  <td>{{ $value->keterangan }}</td>
+                </tr>
+              @endforeach
             </tbody>
           </table>
           <br>
@@ -104,7 +76,7 @@
                 <br>
                 <br>
                 <br>
-                <h4 style="font-size: 18px;">OTOPIANUS P.TEBAI</h4>
+                <h4 style="font-size: 18px;">{{ Request::get('name') }}</h4>
             </div>
             <div>
                 <div class="box">
@@ -118,7 +90,7 @@
                 <br>
                 <br>
                 <br>
-                <h4 style="font-size: 18px;">Bakal Calon Wakil Gubernur</h4>
+                <h4 style="font-size: 18px;">{{ Request::get('wakil') }}</h4>
             </div>
           </div>
         </div>
