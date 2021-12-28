@@ -13,6 +13,11 @@ class B extends Controller
 
     public function show($id)
     {
-        return view('admin.B.show');
+        $today = date('d F Y');
+
+        $params = [
+            'date' => $today
+        ];
+        return view('admin.B.show')->with($params);
     }
 }

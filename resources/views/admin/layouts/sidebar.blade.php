@@ -26,6 +26,7 @@
                         <li class="{{ request()->segment(2) == 'B1' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.B1.index') }}">Model B.1-KWK</a></li>
                         <li class="{{ request()->segment(2) == 'B11' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.B11.index') }}">Model B.1.1-KWK</a></li>
                         <li class="{{ request()->segment(2) == 'B2' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.B2.index') }}">Model B.2-KWK</a></li>
+                        <li class="{{ request()->segment(2) == 'F1' ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin.F1.index') }}">Model F-1 DPD</a></li>
                     </ul>
                 </li>
                 <li class="{{ request()->segment(2) == 'user' ? 'active' : '' }}">

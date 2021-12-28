@@ -44,6 +44,9 @@ Route::name('admin.')->prefix('admin')->middleware(['auth', 'admin', 'active', '
     Route::resource('B1', 'B1');
     Route::resource('B11', 'B11');
     Route::resource('B2', 'B2');
+    Route::resource('F1', 'F1');
+    Route::post('F1/list', 'F1@list')->name('F1.list');
+    Route::post('F1/lampiran', 'F1@lampiran')->name('F1.lampiran');
 
     // Data Article
     Route::resource('article', 'ArticleController');

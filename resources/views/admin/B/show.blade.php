@@ -15,13 +15,14 @@
     </section>
     <div class="wrap-content">
         <p>Berdasarkan ketentuan Undang-Undang dan Peraturan Komisi Pemilihan Umum, bersama ini kami atas nama :</p>
-        1. Nama Bakal Calon Gubernur :<span class="font-weight: bold;"> <span style="font-weight: bold;">OTOPIANUS P. TEBAI</span></span>
+        1. Nama Bakal Calon Gubernur : <br><span style="font-weight: bold;text-transform: uppercase;margin-left: 20px;"> <span style="font-weight: bold;">{{ Request::get('name') }}</span></span>
         <br>
-        2. Nama Bakal Calon Wakil Gubernur :<span class="font-weight: bold;">OTOPIANUS P. TEBAI</span>
+        <br>
+        2. Nama Bakal Calon Wakil Gubernur : <br>   <span style="font-weight: bold;text-transform: uppercase;margin-left: 20px;">{{ Request::get('wakil') }}</span>
         <br>
         <br>
         <p>Menyatakan :</p>
-        <p>1. Mendaftarkan diri sebagai Bakal Pasangan Calon Gubernur dan Wakil Gubernur Provinsi Papua Tahun 2024 dengan jumlah pendukung 319.000 orang (7.5%) dari jumlah pemilih, yang tersebar di 6 kabupaten (50%) Kabupaten dan telah memnuhi ketentuan jumlah dukungan dan sebaran sesuai ketentuan peraturan perundang-undangan yang berlaku.</p>
+        <p>1. Mendaftarkan diri sebagai Bakal Pasangan Calon Gubernur dan Wakil Gubernur <b>Provinsi Papua Tengah</b> Tahun 2024 dengan jumlah pendukung <b>319.000</b> orang <b>(7.5%)</b> dari jumlah pemilih, yang tersebar di <b>6 kabupaten (100%)</b> Kabupaten dan telah memnuhi ketentuan jumlah dukungan dan sebaran sesuai ketentuan peraturan perundang-undangan yang berlaku.</p>
         <p>2. Bahwa naskah visi, misi dan program yang kami susun, telah sesuai dengan Rencana Pembangunan Jangka Panjang (RPJP) Daerah.</p>
         <p>Surat pencalonan ini sebagai bukti pemenuhan syarat pengajuan Bakal Pasangan Calon Gubernur dan Wakil Gubernur/Bupati dan Wakil Bupati/Wali kota dan Wakil Wali Kota, dan dilampiri dokumen lainnya sesuai ketentuan peraturan perundang-undangan yang</p>
         <p>Demikian Surat Pencalonan ini dibuat dengan sebenarnya untuk digunakan sebagaimana mestinya.</p>
@@ -32,15 +33,15 @@
                 <br>
                 <br>
                 <br>
-                <h4 style="font-size: 16px;">OTOPIANUS P.TEBAI</h4>
+                <h4 style="font-size: 16px;font-weight: bold;text-transform: uppercase;">{{ Request::get('name') }}</h4>
             </div>
             <div>
-                <p>Papua Tengah, Maret 2024</p>
+                <p style="width: max-content">Papua Tengah, {{ $date }}</p>
                 <br>
                 <br>
                 <br>
                 <br>
-                <h4 style="font-size: 16px;">Bakal Calon Wakil Gubernur</h4>
+                <h4 style="font-size: 16px;font-weight: bold;text-transform: uppercase;">{{ Request::get('name') }}</h4>
             </div>
           </div>
     </div>

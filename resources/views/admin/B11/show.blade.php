@@ -17,20 +17,20 @@
         <p>
             Bersama ini kami, atas nama Bakal Pasangan Calon Peseorangan:
         </p>
-        <p>Nama Bakal Calon Gubernur : <span style="font-weight: bold;">{{ Request::get('name') }}</span></p>
-        <p>Nama Bakal Calon Wakil Gubernur : <span style="font-weight: bold;">{{ Request::get('wakil') }}</span></p>
+        <p>Nama Bakal Calon Gubernur : <span style="font-weight: bold;text-transform: uppercase;">{{ Request::get('name') }}</span></p>
+        <p>Nama Bakal Calon Wakil Gubernur : <span style="font-weight: bold;text-transform: uppercase;">{{ Request::get('wakil') }}</span></p>
         <p class="menyatakan">Menyatakan daftar nama pendukung Bakal Pasangan Calon Persorangan dalam Pemilihan Gubernur dan Wakil Gubernur</p>
-        <p>Provinsi <span class="titik">:</span> <span style="font-weight: bold;position: absolute;left: 27vw">PAPUA </span></p>
-        <p>Kabupaten/Kota <span class="titik">: {{ $ktp[0]->getCity->city_name }} </span></p>
-        <p>Kecamatan <span class="titik">: {{ $ktp[0]->getDistrict->dis_name }}</span> </p>
-        <p>Kelurahan/Desa <span class="titik">: {{ $ktp[0]->getSubdistrict->subdis_name }}</span> </p>
-        <p>Sebagai berikut <span class="titik">:</span></p>
+        <p>Provinsi <span class="titik">:</span> <span style="font-weight: bold;position: absolute;left: 27vw;text-transform: uppercase;">PAPUA TENGAH</span><p>
+        <p>Kabupaten/Kota <span class="titik">:</span> <span style="font-weight: bold;position: absolute;left: 27vw;text-transform: uppercase;">{{ $ktp[0]->getCity->city_name }} </span></p>
+        <p>Kecamatan <span class="titik">:</span> <span style="font-weight: bold;position: absolute;left: 27vw;text-transform: uppercase;">{{ $ktp[0]->getDistrict->dis_name }}</span> </p>
+        <p>Kelurahan/Desa <span class="titik">:</span> <span style="font-weight: bold;position: absolute;left: 27vw;text-transform: uppercase;">{{ $ktp[0]->getSubdistrict->subdis_name }}</span> </p>
+        <p>Sebagai berikut <span class="titik">:</span><span style="font-weight: bold;position: absolute;left: 27vw;text-transform: uppercase;"></span></p>
         <br>
         <table class="table tbl2">
             <thead>
               <tr>
                 <th scope="col">No</th>
-                <th scope="col">Nam</th>
+                <th scope="col">Nama</th>
                 <th scope="col">NIK</th>
                 <th scope="col">Jenis Kelamin</th>
                 <th scope="col">Alamat</th>
@@ -60,33 +60,32 @@
                   <td>{{ $value->tanggal_lahir }}</td>
                   <td>{{ $value->keterangan }}</td>
                   <td>{{ $value->status_perkawinan }}</td>
-                  <td>{{ $value->keterangan }}</td>
+                  <td>-</td>
                 </tr>
               @endforeach
             </tbody>
           </table>
           <br>
-          <br><br><br><br><br><br><br><br><br>
-          <p>Demikian daftar nama pendukung ini dibuat untuk digunakan sebagaimana mestinya. Apabila ternyata kemudian hari ditemukan ketidak benaran terhadap data tersebut di atas, kami bersedia diberikan sanksi sesuai ketentuan perundangan-undangan yang berlaku.</p>
+          <p class="jk">Demikian daftar nama pendukung ini dibuat untuk digunakan sebagaimana mestinya. Apabila ternyata kemudian hari ditemukan ketidak benaran terhadap data tersebut di atas, kami bersedia diberikan sanksi sesuai ketentuan perundangan-undangan yang berlaku.</p>
           <br>
           <div class="footer ft">
             <div class="lls">
-                <p>Bakal Calon Gubernur</p>
+                <p style="width: max-content;">Bakal Calon Gubernur</p>
                 <br>
                 <br>
                 <br>
                 <br>
                 <br>
-                <h4 style="font-size: 18px;">{{ Request::get('name') }}</h4>
+                <h4 style="font-size: 18px;text-transform: uppercase;font-weight: bold;">{{ Request::get('name') }}</h4>
             </div>
             <div class="llr">
-                <p>Papua Tengah, {{ $date }}</p>
+                <p style="width: max-content;">Papua Tengah, {{ $date }}</p>
                 <br>
                 <br>
                 <br>
                 <br>
                 <br>
-                <h4 style="font-size: 18px;">{{ Request::get('wakil') }}</h4>
+                <h4 style="font-size: 18px;text-transform: uppercase;font-weight: bold;">{{ Request::get('wakil') }}</h4>
             </div>
           </div>
         </div>
