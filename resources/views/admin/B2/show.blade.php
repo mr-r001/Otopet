@@ -12,15 +12,14 @@
 <body>
     
     <section class="hero">
-        <h1>REKAPITULASI JUMLAH DUKUNGAN BAKAL PASANGAN CALON GUBERNU DALAM PEMILIHAN GUBERNUR DAN WAKIL GUBERNUR</h1>
+        <h1 style="margin-top: 70px">REKAPITULASI JUMLAH DUKUNGAN BAKAL PASANGAN CALON GUBERNU DALAM PEMILIHAN GUBERNUR DAN WAKIL GUBERNUR</h1>
         <br>
-        <div class="wrap-content">
-            <p>Rekapitulasi jumlah dukungan bakal pasangan calon perseorangan pemilihan Gunernur dan Wakil Gubernur Provinsi Papua Tahun 2024, atas nama : </p>
-            <br>
+        <div class="wrap-content" style="margin-top: -20px;margin-left: 38px">
+            <p>Rekapitulasi jumlah dukungan bakal pasangan calon perseorangan pemilihan Gubernur dan Wakil Gubernur Provinsi Papua Tahun 2024, atas nama : </p>
             <p>1. Nama Bakal Calon Gubernur <span>:</span> <br> <span style="font-weight: bold;text-transform: uppercase;margin-left: 20px;">{{ Request::get('name') }}</span></p>
             <p>2. Nama Bakal Calon Wakil Gubernur : <br> <span style="font-weight: bold;text-transform: uppercase;margin-left: 20px;">{{ Request::get('wakil') }}</span></p>
             <p>Dengan rincian data sebagai berikut :</p>
-            <p>Tabel RincianJumalh Pendukung Bakal Pasangan Calon Perseorangan</p>
+            <b><p>Tabel Rincian Jumlah Pendukung Bakal Pasangan Calon Perseorangan</p></b>
             <table class="table tg">
                 <thead>
                   <tr>
@@ -48,7 +47,7 @@
             </table>
             <p class="berdasarkan ftr">Berdasarkan tabel tersebut, jumlah dukungan bakal pasangan calon perseorangan adalah :</p>
             <p>a. Jumlah dukungan  <span>:</span> {{ $total }} pendukung</p>
-            <p>b. Jumlah sebaran <span>:</span> 6 kabupaten/kecamatan*)</p>
+            <p>b. Jumlah sebaran <span>:</span> 7 kabupaten/kecamatan*)</p>
             <div class="footer">
                 <div>
                     <p>Bakal Calon Gubernur</p>

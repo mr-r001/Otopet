@@ -22,9 +22,9 @@
         <br>
         <br>
         <p>Menyatakan :</p>
-        <p>1. Mendaftarkan diri sebagai Bakal Pasangan Calon Gubernur dan Wakil Gubernur <b>Provinsi Papua Tengah</b> Tahun 2024 dengan jumlah pendukung <b>319.000</b> orang <b>(7.5%)</b> dari jumlah pemilih, yang tersebar di <b>6 kabupaten (100%)</b> Kabupaten dan telah memnuhi ketentuan jumlah dukungan dan sebaran sesuai ketentuan peraturan perundang-undangan yang berlaku.</p>
+        <p>1. Mendaftarkan diri sebagai Bakal Pasangan Calon Gubernur dan Wakil Gubernur <b>Provinsi Papua Tengah</b> Tahun 2024 dengan jumlah pendukung <b>319.000</b> orang <b>(8,9%)</b> dari jumlah pemilih, yang tersebar di <b>6 kabupaten (100%)</b> Kabupaten dan telah memenuhi ketentuan jumlah dukungan dan sebaran sesuai ketentuan peraturan perundang-undangan yang berlaku.</p>
         <p>2. Bahwa naskah visi, misi dan program yang kami susun, telah sesuai dengan Rencana Pembangunan Jangka Panjang (RPJP) Daerah.</p>
-        <p>Surat pencalonan ini sebagai bukti pemenuhan syarat pengajuan Bakal Pasangan Calon Gubernur dan Wakil Gubernur/Bupati dan Wakil Bupati/Wali kota dan Wakil Wali Kota, dan dilampiri dokumen lainnya sesuai ketentuan peraturan perundang-undangan yang</p>
+        <p>Surat pencalonan ini sebagai bukti pemenuhan syarat pengajuan Bakal Pasangan Calon Gubernur dan Wakil Gubernur, dan dilampiri dokumen lainnya sesuai ketentuan peraturan perundang-undangan yang berlaku</p>
         <p>Demikian Surat Pencalonan ini dibuat dengan sebenarnya untuk digunakan sebagaimana mestinya.</p>
         <div class="footer">
             <div>

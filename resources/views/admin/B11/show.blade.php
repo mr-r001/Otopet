@@ -11,7 +11,7 @@
 </head>
 <body>
     <section class="hero">
-        <h1 class="title2" style="left: 4%;position: relative;">SURAT PERNYATAAN DAFTAR NAMA PENDUKUNG BAKAL PASANGAN CALON PERSEORANGAN DALAM PEMILIHAN GUBERNUR DAN WAKIL GUBERNUR</h1>
+        <h1 class="title2" style="left: 4%;position: relative;margin-top: 50px;">SURAT PERNYATAAN DAFTAR NAMA PENDUKUNG BAKAL PASANGAN CALON PERSEORANGAN DALAM PEMILIHAN GUBERNUR DAN WAKIL GUBERNUR</h1>
     </section>
     <div class="wrap-content2">
         <p>
@@ -68,7 +68,7 @@
           <br>
           <p class="jk">Demikian daftar nama pendukung ini dibuat untuk digunakan sebagaimana mestinya. Apabila ternyata kemudian hari ditemukan ketidak benaran terhadap data tersebut di atas, kami bersedia diberikan sanksi sesuai ketentuan perundangan-undangan yang berlaku.</p>
           <br>
-          <div class="footer ft">
+          <div class="footer ft" style="margin-top: -20px;">
             <div class="lls">
                 <p style="width: max-content;">Bakal Calon Gubernur</p>
                 <br>
@@ -76,7 +76,7 @@
                 <br>
                 <br>
                 <br>
-                <h4 style="font-size: 18px;text-transform: uppercase;font-weight: bold;">{{ Request::get('name') }}</h4>
+                <h4 style="font-size: 18px;text-transform: uppercase;font-weight: bold;width: max-content ">{{ Request::get('name') }}</h4>
             </div>
             <div class="llr">
                 <p style="width: max-content;">Papua Tengah, {{ $date }}</p>

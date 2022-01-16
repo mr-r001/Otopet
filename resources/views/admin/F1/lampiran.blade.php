@@ -21,7 +21,7 @@
         <h3>{{ $no++ }}. {{ $value->nama }}</h3>
       </div>
       <div class="card-ktp-right">
-        <img src="{{ asset('img/ktp/')."/". $value->photo }}" alt="ktp" class="ktp">
+        <img src="{{ asset('img/ktp/43140588814.png') }}" alt="ktp" class="ktp">
       </div>
     </div>
 

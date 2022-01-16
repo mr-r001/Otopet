@@ -23,7 +23,7 @@ section {
 .hero h1 {
     text-align: center;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
     width: 100vw;
     text-align: center;
     margin-left: auto;
@@ -38,6 +38,7 @@ section {
 .title2 {
     position: relative;
     left: 10%;
+    margin-top: 100px;
 }
 
 .demikian {
@@ -82,7 +83,7 @@ th {
 
 .wrap-content {
     position: relative;
-    top: 44px;
+    top: 24px;
     width: 77vw;
     margin-left: auto;
     line-height: 1.4em;
@@ -101,7 +102,7 @@ th {
 }
 
 .tbl2 {
-    transform: scale(0.85);
+    transform: scale(0.83);
     position: relative;
     right: 13%;
 }
@@ -183,9 +184,10 @@ th {
         width: 100vw;
         text-align: justify;
         text-indent: 20px;
-        margin-top: 30px;
+        margin-top: -330px;
     }
     .ftr {
+        margin-top: -420px;
         page-break-before: always;
     }
 }
@@ -288,9 +290,11 @@ th {
 }
 
 .tg {
-    margin-top: 20px;
+    margin-top: 40px;
     border: 1px solid black;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    transform: scale(1.1);
+    margin-left: 30px;
 }
 
 td,

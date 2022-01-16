@@ -12,13 +12,13 @@
 <body>
     <section class="hero">
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/KPU_Logo.svg" alt="logo-kpu" class="kpu">
-        <h1 class="title2" style="left: 12%;position: relative;">DAFTAR NAMA PENDUKUNG PEMILIH PERSEORANGAN CALON PESERTA PEMILU ANGGOTA DEWAN PERWAKILAN DAERAH PEMILU TAHUN 2024</h1>
+        <h1 class="title2" style="left: 12%;position: relative;margin-top: 30px;">DAFTAR NAMA PENDUKUNG PEMILIH PERSEORANGAN CALON PESERTA PEMILU ANGGOTA DEWAN PERWAKILAN DAERAH PEMILU TAHUN 2024</h1>
     </section>
     <div class="wrap-content2">
-        <div class="alamat" style="width: 100vw;margin-bottom: 40px;margin-left: 40px;display: flex;justify-content: space-between;align-items: center;margin-top: -50px;">
+        <div class="alamat" style="width: 100vw;margin-bottom: 40px;margin-left: 40px;display: flex;justify-content: space-between;align-items: center;margin-top: -20px;">
           <div class="alamat2" style="flex-direction: column;display: flex;align-items: center;">
             <div style="font-weight: bold;">KELURAHAN/DESA : <b class="v"><span style="font-weight: bold;margin-left: 10px;">{{ $ktp[0]->getSubdistrict->subdis_name }}</span></b></div>
-            <div style="font-weight: bold;">KECAMATAN : <b class="v">{{ $ktp[0]->getDistrict->dis_name }} }}</b></div>
+            <div style="font-weight: bold;">KECAMATAN : <b class="v">{{ $ktp[0]->getDistrict->dis_name }}</b></div>
           </div>
           <div class="alamat2" style="flex-direction: column;display: flex;align-items: center;">
             <div style="font-weight: bold;">KABUPATEN/KOTA : <b class="v">{{$ktp[0]->getCity->city_name }}</b></div>
@@ -26,7 +26,7 @@
           </div>
       </div>
         <br>
-        <table class="table tbl3" style="width: 111vw;margin-top: 0px;transform: scale(1.15)">
+        <table class="table tbl3" style="width: 111vw;margin-top: 0px;transform: scale(1.15);margin-left: 20px  ;">
             <thead>
               <tr>
                 <th scope="col">No</th>
