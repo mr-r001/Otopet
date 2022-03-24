@@ -11,9 +11,9 @@
 </head>
 <body>
     <section class="hero">
-        <h1 class="title2" style="left: 4%;position: relative;">SURAT PERNYATAAN DAFTAR NAMA PENDUKUNG BAKAL PASANGAN CALON PERSEORANGAN DALAM PEMILIHAN GUBERNUR DAN WAKIL GUBERNUR</h1>
+        <h1 class="title2" style="left: 0%;position: relative;font-size: 25px;top: 45px;">SURAT PERNYATAAN DAFTAR NAMA PENDUKUNG BAKAL PASANGAN CALON PERSEORANGAN DALAM PEMILIHAN GUBERNUR DAN WAKIL GUBERNUR</h1>
     </section>
-    <div class="wrap-content2">
+    <div class="wrap-content2" style="position: relative;margin-left: 120px;>
         <p>
             Bersama ini kami, atas nama Bakal Pasangan Calon Peseorangan:
         </p>

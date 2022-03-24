@@ -12,7 +12,7 @@
 <body>
     
     <section class="hero">
-        <h1>REKAPITULASI JUMLAH DUKUNGAN BAKAL PASANGAN CALON GUBERNU DALAM PEMILIHAN GUBERNUR DAN WAKIL GUBERNUR</h1>
+        <h1 style="position: relative;top: 50px;font-size: 25px;width: 90vw">REKAPITULASI JUMLAH DUKUNGAN BAKAL PASANGAN CALON GUBERNU DALAM PEMILIHAN GUBERNUR DAN WAKIL GUBERNUR</h1>
         <br>
         <div class="wrap-content">
             <p>Rekapitulasi jumlah dukungan bakal pasangan calon perseorangan pemilihan Gunernur dan Wakil Gubernur Provinsi Papua Tahun 2024, atas nama : </p>

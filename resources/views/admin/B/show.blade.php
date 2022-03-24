@@ -11,7 +11,7 @@
 </head>
 <body>
     <section class="hero">
-        <h1 style="width: 50vw">PERSEORANGAN PEMILIHAN GUBERNUR DAN WAKIL GUBERNUR</h1>
+        <h1 style="width: 50vw;font-size: 25px;position: relative;top: 15px;">PERSEORANGAN PEMILIHAN GUBERNUR DAN WAKIL GUBERNUR</h1>
     </section>
     <div class="wrap-content">
         <p>Berdasarkan ketentuan Undang-Undang dan Peraturan Komisi Pemilihan Umum, bersama ini kami atas nama :</p>
